@@ -1,0 +1,44 @@
+.list_filters{
+    padding: 10px;
+    border-style: groove;
+    border-color: beige;
+    width: 100%;
+}
+
+.filter{
+    margin: 10px;
+    width: 300px;
+    height: 40px;
+}
+
+.filter_box{
+    margin: 20px;
+}
+
+.instruction{
+    font-weight: 600;
+    color: #373839;
+}
+
+.view_list{
+    width: 200px;
+}
+
+.submit_group{
+    float: right;
+}
+
+@media only screen and (max-width: 420px) {
+    .list_filters{
+        /* display: contents; */
+        justify-content: center;
+        padding: 10px;
+        border-style: groove;
+        border-color: beige;
+    }
+
+    .filter{
+        width: 100%;
+        margin: 0px;
+    }
+}
