@@ -1,0 +1,150 @@
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #C8C3C3 !important;
+		}
+		.user_card {
+			height: 400px;
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background:#9f1c33;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+			.brand_logo_container {
+			position: absolute;
+			height: 170px;
+			width: 170px;
+			top: -75px;
+			border-radius: 50%;
+			background: #C8C3C3;
+			padding: 10px;
+			text-align: center;
+		
+		}
+		
+		
+		.form_container {
+			margin-top: 100px;
+		}
+		.login_btn {
+			width: 100%;
+			background: #4d4d4d !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #4d4d4d  !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+			background-color: #4d4d4d !important;
+		}
+.top_logo {
+    height: 100px;
+    width: 200px;
+    margin-left: 10px;
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    float: right;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.primary_color{
+    background-color: #9f1c33;
+}
+
+.primary_color a {
+    color: #f1f1f1;
+}
+
+.dropdown-menu a{
+    color: darkslategrey;
+}
+
+.search_btn {
+    color: #f1f1f1;
+    border-color: #f1f1f1;
+}
+
+.jumbotron{
+    background-color: #373839;
+}
+
+.footer-data{
+    color: #f1f1f1;
+}
+.top_logo_login{
+	height: 70px;
+}
+.type{
+	color: whitesmoke;
+    font-size: larger;
+}
+@media only screen and (max-width: 420px) {
+    .top_logo_login{
+        height: 60px;
+        width: 130px;
+        margin-left: 0px;
+    }
+
+    .chip {
+        padding: 0 15px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 28px;
+        margin-top: 20px;
+    }
+
+    .chip img {
+        float: left;
+        margin: 0 5px 0 -15px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+}
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
