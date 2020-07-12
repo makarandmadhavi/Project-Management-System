@@ -1,3 +1,5 @@
+
+alert('hekej');
 //Getting member names
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -11,6 +13,12 @@ function getParameterByName(name, url) {
 var member1 = getParameterByName('para1');
 var member2 = getParameterByName('para2');
 var member3 = getParameterByName('para3');
+
+document.getElementById("param1").innerHTML = member1;
+document.getElementById("param2").innerHTML = member2;
+document.getElementById("param3").innerHTML = member3;
+
+alert('hekej');
 
 
 //Getting Leader
