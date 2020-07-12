@@ -79,23 +79,7 @@
 </div>
 </div>
 
-<!--Footer
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <p class="footer-data">Footer</p>
-  </div>
-  Footer Ends-->
-<script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-  }
 
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
-  }
-</script>
+<script src="js/admin.js"></script>
 
 <?php include '../templates/footer.php'; ?>
