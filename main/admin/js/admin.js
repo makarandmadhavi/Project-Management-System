@@ -36,3 +36,9 @@ function add_faculty(f) {
     });
     return false;
 }
+
+function changetab(id) {
+    $("#main-content").load(id+".php");
+    $("li").removeClass("active");
+    $("#"+id).addClass("active");
+}

@@ -93,6 +93,45 @@ body {
   margin-left: 50px;
 }
 
+nav {
+  padding: 0px !important;
+}
+
+nav ul {
+  display: flex;
+  align-items: stretch;
+  /* Default */
+  justify-content: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: block;
+  flex: 0 1 auto;
+  /* Default */
+  list-style-type: none;
+}
+
+.nav-link {
+  color: white !important;
+  padding: 15px 20px !important;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: #9E1C36 !important;
+
+}
+
+.active {
+  background-color: white;
+  color: #9E1C36 !important;
+}
+
 #main {
   transition: margin-left .5s;
   padding: 0px;
