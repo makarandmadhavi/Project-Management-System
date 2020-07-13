@@ -8,7 +8,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
-  <a href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Student List</a>
+  <a href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Add Faculty</a>
   <a href="#"><i class="fa fa-address-book" aria-hidden="true"></i>Registered Group</a>
   <a href="#"><i class="fa fa-users" aria-hidden="true"></i>Group Allocation</a>
   <a href="#"><i class="far fa-question-circle"></i>Evaluator Allocation</a>
@@ -51,32 +51,74 @@
           </div>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0 search_btn" type="submit">Search</button>
-      </form>
+
     </div>
   </nav>
-  <div>
-    <h1>Create Content here</h1>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        
+          <div class="card container add-box">
+            <h5 class="card-header">Statistics</h5>
+            <div class="card-body">
+              <p class="card-text">Total Students- 600</p>
+              <p class="card-text">Total Groups Registered- 10</p>
+              <p class="card-text">Total Students Registered- 30</p>
+              <p class="card-text">Total Students Yet to Regist- 30</p>
+
+           
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="container add-box">
+          <center>
+            <h2 class="card-title">Add Faculty</h2>
+          </center>
+          <form onsubmit="add_faculty(this)">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label>Contact Number</label>
+              <input type="number" class="form-control" id="phone" placeholder="0000000000">
+            </div>
+            <div class="form-group">
+              <label>Domain</label>
+              <select multiple class="form-control" id="domain">
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="Internet of things">Internet of things</option>
+                <option value="Web development">Web development</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Department</label>
+              <select class="form-control" id="department">
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option>Information Technology</option>
+                <option>Electronics Engineering</option>
+                <option>Electronics and Telecommunication Engineering</option>
+                <option>Instrumentation</option>
+              </select>
+            </div>
+            <center>
+              <button type="submit" id="submit" class="btn btn-primary">Add</button>
+            </center>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <!--Footer-->
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <p class="footer-data">Footer</p>
-  </div>
-  <!--Footer Ends-->
-</div>
+
+
+
 </div>
 
 
