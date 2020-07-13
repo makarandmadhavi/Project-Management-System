@@ -31,51 +31,44 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <ul class="navbar-nav">
+        <li onclick="window.location=''" class="nav-item nav-link" id="home">
+          Home
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item nav-link" onclick="changetab(this.id)" id="faculty">
+          View Faculty
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+        <li class="nav-item nav-link" onclick="changetab(this.id)" id="students">
+          Students List
         </li>
+        
+
       </ul>
 
     </div>
   </nav>
-  <div class="container">
+  <div id="main-content" class="container">
     <div class="row">
       <div class="col-sm-6">
-        
-          <div class="card container add-box">
-            <h5 class="card-header">Statistics</h5>
-            <div class="card-body">
-              <p class="card-text">Total Students- 600</p>
-              <p class="card-text">Total Groups Registered- 10</p>
-              <p class="card-text">Total Students Registered- 30</p>
-              <p class="card-text">Total Students Yet to Regist- 30</p>
 
-           
+        <div class="card container add-box">
+          <h5 class="card-header">Statistics</h5>
+          <div class="card-body">
+            <p class="card-text">Total Students- 600</p>
+            <p class="card-text">Total Groups Registered- 10</p>
+            <p class="card-text">Total Students Registered- 30</p>
+            <p class="card-text">Total Students Yet to Regist- 30</p>
+
+
           </div>
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="container add-box">
+        <div id="add-faculty-view" class="container add-box">
           <center>
             <h2 class="card-title">Add Faculty</h2>
           </center>
-          <form onsubmit="add_faculty(this)">
+          <form onsubmit="add_faculty(this);" action="javascript:void(0);">
             <div class="form-group">
               <label>Name</label>
               <input type="text" class="form-control" id="name" placeholder="Name">
