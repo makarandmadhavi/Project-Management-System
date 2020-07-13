@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 $branch = $_GET['br'];
 
 
-$stmt = $conn->prepare("select id, name, rollno, batch, division from student where department = ?");
+$stmt = $conn->prepare("select id, name, rollno, batch, division from students where branch = ? AND isGrouped = 0");
 echo $conn->error;
 $stmt->bind_param("s",$branch);
 $stmt->execute();
@@ -41,18 +41,6 @@ echo '</table>';
 echo '<button type="button" onclick="accept_group()" class="btn btn-secondary submit_group">Proceed with Selected Members</button>';
 echo '<br>';
 echo '<br>';
-echo '<script>
-alert("he");
-$(document).ready(function(){
-    alert("Hello");
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#page tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>';
 
 $conn->close();
 ?> 

@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="assets/bootstrap.min.css">
-    <link rel="stylesheet" href="admin/css/starter.css">
-    <link rel="stylesheet" href="admin/css/index.css">
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" href="css/starter.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <title>PMS</title>
     
@@ -18,9 +18,9 @@
 <body>
     <!--Head and Navbar-->
     <div>
-        <img src="assets/images/Rait_new_logo_png.png" class="top_logo">
+        <img src="../assets/images/Rait_new_logo_png.png" class="top_logo">
         <div class="chip">
-            <img src="assets/images/img_avatar.png" alt="Person" width="96" height="96">
+            <img src="../assets/images/img_avatar.png" alt="Person" width="96" height="96">
             Nikhil Ingale
         </div>
     </div>
@@ -100,11 +100,10 @@
     <!--Footer Ends-->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="admin/js/index.js"></script>
-    <script src="assets/jquery-3.5.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="../assets/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="assets/bootstrap.min.js"></script>
+    <script src="../assets/bootstrap.min.js"></script>
 
 </body>
 </html>

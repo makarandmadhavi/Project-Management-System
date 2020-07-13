@@ -18,7 +18,7 @@ function accept_group() {
         alert("Nothing Found");
     } else {
         var queryString = "?para1=" + members[0] + "&para2=" + members[1] + "&para3=" + members[2];
-        window.location.href = "groupRegistration.html" + queryString;
+        window.location.href = "./groupDetails.php" + queryString;
     }
 }
 
@@ -34,7 +34,7 @@ function getStudentList() {
             document.getElementById("student_table").innerHTML = this.responseText;
         }
     };
-    xhttp.open("GET", "getStudentList.php?br=" + branch, true);
+    xhttp.open("GET", "./backend/getStudentList.php?br=" + branch, true);
     xhttp.send();
 
     document.getElementById("display_branch").innerHTML = branch;
