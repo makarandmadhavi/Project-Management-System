@@ -71,11 +71,11 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="container add-box">
+        <div id="add-faculty-view" class="container add-box">
           <center>
             <h2 class="card-title">Add Faculty</h2>
           </center>
-          <form onsubmit="add_faculty(this)">
+          <form onsubmit="add_faculty(this)" action="#">
             <div class="form-group">
               <label>Name</label>
               <input type="text" class="form-control" id="name" placeholder="Name">

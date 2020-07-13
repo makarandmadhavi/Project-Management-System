@@ -52,12 +52,8 @@
 
 
 
-
-
-
 body {
-  font-family: "Lato", sans-serif;
-  transition: background-color .5s;
+ 
 }
 
 .sidenav {
@@ -113,6 +109,11 @@ body {
   padding: 10px;
   position: relative;
   max-width: 500px;
+}
+
+::placeholder {
+  color: rgb(145, 139, 139) !important;
+  font-weight: 200 !important;
 }
 
 input::-webkit-outer-spin-button,

@@ -31,13 +31,8 @@ function add_faculty(f) {
         success: function (data) {
             //data is returned here
             $('#submit').prop("disabled",false);
-            if (data == "SUCCESS") {
-                alert("faculty added");
-                window.location = '';
-            } else {
-                alert("Error");
-                window.location = '';
-            }
+            $(f).html(data);
         }
     });
+    return false;
 }
