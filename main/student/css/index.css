@@ -1,21 +1,20 @@
-.add-box {
-    margin-top: 20px;
-    background-color: #fff;
-    -webkit-box-shadow: 10px 10px 41px -4px rgba(0, 0, 0, 0.21);
-    -moz-box-shadow: 10px 10px 41px -4px rgba(0, 0, 0, 0.21);
-    box-shadow: 10px 10px 41px -4px rgba(0, 0, 0, 0.21);
-    /* max-width: 1000px; */
-    border-radius: 8px;
-    padding: 10px;
-    position: relative;
-    max-width: 90%;
+.nav_heading{
+    display: flex;
+    justify-content: center;
+    color: white;
 }
 
 .list_filters{
     padding: 10px;
-    border-style: groove;
-    border-color: beige;
     width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table_box{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* padding: 20px; */
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .filter{
@@ -25,7 +24,8 @@
 }
 
 .filter_box{
-    margin: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .instruction{
@@ -42,6 +42,7 @@
 }
 
 #search_branch{
+    margin-top: 20px;
     display: none;
     float: right;
 }
@@ -49,6 +50,36 @@
     width: 300px;
     margin-bottom: 20px;
     /* float: right; */
+}
+
+.login_btn {
+    border: 2px;
+    background-color: white;
+    padding: 5px 0px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 20px;
+    /* border-color: #d66176; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #ad354b;
+    float: right;
+    margin-right: 30px;
+    margin-top: 30px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.login_btn:hover {
+    background-color: #9f1c33;
+    color: white;
+    transition: ease 0.5s;
+    -webkit-transition: ease 0.5s;
+    -moz-transition: ease 0.5s;
+    -ms-transition: ease 0.5s;
+    -o-transition: ease 0.5s;
 }
 
 @media only screen and (max-width: 420px) {
