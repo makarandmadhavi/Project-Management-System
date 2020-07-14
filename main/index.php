@@ -56,7 +56,7 @@ if(isset($_SESSION['logintype'])){
             <h1 class="text-center">Login</h1>
         </div>
         <div class="container">
-            <form onsubmit="login()">
+            <!-- <form onsubmit="login()"> -->
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
                     <input type="text" class="form-control" id="username" placeholder="username" required>
@@ -67,9 +67,9 @@ if(isset($_SESSION['logintype'])){
                 </div>
 
                 <center>
-                    <button type="submit" class="btn btn-success">login</button>
+                    <button type="submit" onclick="login()" class="btn btn-success">login</button>
                 </center>
-            </form>
+            <!-- </form> -->
         </div>
 
     </div>

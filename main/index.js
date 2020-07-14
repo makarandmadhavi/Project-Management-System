@@ -14,14 +14,14 @@ function login() {
             },
             success: function (data) {
                 //data is returned here
+                console.log(data);
                 if (data == "incorrect") {
                     alert("Incorrect username password!");
                 } else {
-                   window.location = data;
+                   window.location = data+'/';
                 }
             }
         });
-        alert("words");
     return false;
 
 }
