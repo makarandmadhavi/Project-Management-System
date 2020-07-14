@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.0.2
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Jul 13, 2020 at 04:58 PM
+- Server version: 10.4.13-MariaDB
+- PHP Version: 7.4.7
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="pms" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="students">
+                CREATE TABLE `students` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) NOT NULL,
+                  `rollno` varchar(255) NOT NULL,
+                  `batch` varchar(2) NOT NULL,
+                  `division` varchar(1) NOT NULL,
+                  `shift` varchar(10) NOT NULL,
+                  `branch` varchar(255) NOT NULL,
+                  `year` varchar(255) NOT NULL,
+                  `email` varchar(255) NOT NULL,
+                  `contact` varchar(15) NOT NULL,
+                  `isGrouped` int(1) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `rollno` (`rollno`),
+                  UNIQUE KEY `email` (`email`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'pms'
+    -->
+    <database name="pms">
+        <!-- Table students -->
+        <table name="students">
+            <column name="id">1</column>
+            <column name="name">Nikhil Ingale</column>
+            <column name="rollno">17IT3001</column>
+            <column name="batch">A3</column>
+            <column name="division">A</column>
+            <column name="shift">1</column>
+            <column name="branch">IT</column>
+            <column name="year">final</column>
+            <column name="email">nikhil.ingale99@gmail.com</column>
+            <column name="contact">7977064752</column>
+            <column name="isGrouped">0</column>
+        </table>
+        <table name="students">
+            <column name="id">2</column>
+            <column name="name">Piyush Jha</column>
+            <column name="rollno">17IT3002</column>
+            <column name="batch">A1</column>
+            <column name="division">A</column>
+            <column name="shift">1</column>
+            <column name="branch">IT</column>
+            <column name="year">final</column>
+            <column name="email">piyushjha65@gmail.com</column>
+            <column name="contact">3387432648</column>
+            <column name="isGrouped">0</column>
+        </table>
+        <table name="students">
+            <column name="id">3</column>
+            <column name="name">Makarand Madhavi</column>
+            <column name="rollno">17IT3003</column>
+            <column name="batch">A4</column>
+            <column name="division">A</column>
+            <column name="shift">1</column>
+            <column name="branch">IT</column>
+            <column name="year">final</column>
+            <column name="email">makarandmadhavi99@gmail.com</column>
+            <column name="contact">386427468</column>
+            <column name="isGrouped">0</column>
+        </table>
+        <table name="students">
+            <column name="id">4</column>
+            <column name="name">Isha Gujar</column>
+            <column name="rollno">17IT3004</column>
+            <column name="batch">A2</column>
+            <column name="division">A</column>
+            <column name="shift">1</column>
+            <column name="branch">IT</column>
+            <column name="year">final</column>
+            <column name="email">ishagujar@gmail.com</column>
+            <column name="contact">457478632</column>
+            <column name="isGrouped">0</column>
+        </table>
+        <table name="students">
+            <column name="id">5</column>
+            <column name="name">Mansi Lambat</column>
+            <column name="rollno">17IT3005</column>
+            <column name="batch">A4</column>
+            <column name="division">A</column>
+            <column name="shift">1</column>
+            <column name="branch">IT</column>
+            <column name="year">final</column>
+            <column name="email">mansilambat@gmail.com</column>
+            <column name="contact">549454879</column>
+            <column name="isGrouped">0</column>
+        </table>
+        <table name="students">
+            <column name="id">6</column>
+            <column name="name">Hemant Surname</column>
+            <column name="rollno">17IT3006</column>
+            <column name="batch">A2</column>
+            <column name="division">A</column>
+            <column name="shift">1</column>
+            <column name="branch">IT</column>
+            <column name="year">final</column>
+            <column name="email">hemant.hemant@gmail.com</column>
+            <column name="contact">457538483</column>
+            <column name="isGrouped">0</column>
+        </table>
+    </database>
+</pma_xml_export>

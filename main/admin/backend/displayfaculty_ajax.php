@@ -14,7 +14,7 @@
     <td><?=$row['name']?></td>
     <td><?=$row['email']?></td>
     <td><?=$row['department']?></td>
-    <td><button onclick="edit_faculty(<?=$row['id']?>)" class="btn btn-sm btn-primary">change email/password</button></td>
+    <td><button onclick="edit_faculty(<?=$row['id']?>)" class="btn btn-sm btn-primary">Edit</button></td>
 </tr>
 
 <?php

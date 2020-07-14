@@ -2,6 +2,7 @@
 
 <!-- Custom css files go here -->
 <link rel="stylesheet" href="css/Admin.css">
+<link rel="stylesheet" href="css/faculty.css">
 <?php include '../templates/header_end.php'; ?>
 
 

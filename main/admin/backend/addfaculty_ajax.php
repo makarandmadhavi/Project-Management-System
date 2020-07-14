@@ -16,7 +16,7 @@
     $result2 = $conn->query($sql);
     $result1 = false;
     if($result2){
-        $sql = "INSERT INTO `faculty` (`id`, `name`, `email`, `domain`, `department`) VALUES (NULL, '$name', '$email', '$domain', '$department');";
+        $sql = "INSERT INTO `faculty` ( `name`, `email`, `domain`, `department`) VALUES ( '$name', '$email', '$domain', '$department');";
         $result1 = $conn->query($sql);
     }
     
