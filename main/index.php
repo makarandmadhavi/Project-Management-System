@@ -36,8 +36,8 @@ if(isset($_SESSION['logintype'])){
 
         <h4 class="rait-text text-center">Ramrao Adik Institute of Technology</h4>
 
-
     </nav>
+    <!-- login content starts here -->
     <div class="container ">
         <div class="row header">
 
@@ -73,12 +73,12 @@ if(isset($_SESSION['logintype'])){
         </div>
 
     </div>
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script> -->
+    
+    
     <script src="assets/jquery-3.5.1.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>
     <script src="index.js"></script>
+    <!-- login content ends here -->
 
 </body>
 
