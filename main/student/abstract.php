@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include 'backend/config.php';
-include 'header.php';
+include 'isStudent.php';
 
 ?>
 <!doctype html>
@@ -66,7 +66,6 @@ include 'header.php';
         if($check_login_query>0){
           echo'<script>alert("for resubmission go to update abstract page");</script>';
           header("Location: update_abstract.php");
-      
         }
         ?>
 				</div>
@@ -150,24 +149,6 @@ include 'header.php';
 			</div>
 		</div>
   </div>
-<script> 
-  function fileValidation() { 
-    var fileInput =  
-        document.getElementById('file'); 
-      
-    var filePath = fileInput.value; 
-  
-    // Allowing file type 
-    var allowedExtensions =  
-            /(\.pdf)$/i; 
-      
-    if (!allowedExtensions.exec(filePath)) { 
-        alert('Invalid file type'); 
-        fileInput.value = ''; 
-        return false; 
-    } 
-  } 
-  </script> 
 
   
   <!--Footer-->
@@ -190,6 +171,7 @@ include 'header.php';
    $(this).next('.custom-file-label').addClass("selected").html(fileName); 
 });
   </script>
+  <script src="js/abstract.js"></script>
 </body>
 
 </html>

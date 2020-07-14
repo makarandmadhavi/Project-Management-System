@@ -12,7 +12,6 @@ if (isset($_POST['submit']))
   if($check_login_query>0){
     echo'<script>alert("for resubmission go to update abstract page");</script>';
     header("Location: ../update_abstract.php");
-
   }
 
 
@@ -28,7 +27,7 @@ if (isset($_POST['submit']))
   $filename1 = join("_",$filename1);
 
   // destination of the file on the server
-  $destination1 = "../assets/uploads/ppt/". uniqid() . basename($filename1);;
+  $destination1 = "../uploads/". uniqid() . basename($filename1);;
 
   // get the file extension
   $extension1 = pathinfo($filename1, PATHINFO_EXTENSION);
@@ -37,18 +36,13 @@ if (isset($_POST['submit']))
   $file1 = $_FILES['ppt']['tmp_name'];
   $size1 = $_FILES['ppt']['size'];
 
-
-
-
-
-
   //research paper1
   $filename2 = $_FILES['researchpaper_1']['name'];
   $filename2 = explode(" ",$filename2);
   $filename2 = join("_",$filename2);
 
   // destination of the file on the server
-  $destination2 = "../assets/uploads/ppt/". uniqid() . basename($filename2);;
+  $destination2 = "../uploads/". uniqid() . basename($filename2);;
 
   // get the file extension
   $extension2 = pathinfo($filename2, PATHINFO_EXTENSION);
@@ -57,19 +51,13 @@ if (isset($_POST['submit']))
   $file2 = $_FILES['researchpaper_1']['tmp_name'];
   $size2 = $_FILES['researchpaper_1']['size'];
 
-
-
-
-
-
-
   //research paper2
   $filename3 = $_FILES['researchpaper_2']['name'];
   $filename3 = explode(" ",$filename3);
   $filename3 = join("_",$filename3);
 
   // destination of the file on the server
-  $destination3 = "../assets/uploads/ppt/". uniqid() . basename($filename3);;
+  $destination3 = "../uploads/". uniqid() . basename($filename3);;
 
   // get the file extension
   $extension3 = pathinfo($filename3, PATHINFO_EXTENSION);
@@ -78,18 +66,13 @@ if (isset($_POST['submit']))
   $file3 = $_FILES['researchpaper_2']['tmp_name'];
   $size3 = $_FILES['researchpaper_2']['size'];
 
-
-
-
-
-
   //research paper3
   $filename4 = $_FILES['researchpaper_3']['name'];
   $filename4 = explode(" ",$filename4);
   $filename4 = join("_",$filename4);
   
   // destination of the file on the server
-  $destination4 = "../assets/uploads/ppt/". uniqid() . basename($filename4);;
+  $destination4 = "../uploads/". uniqid() . basename($filename4);;
 
   // get the file extension
   $extension4 = pathinfo($filename4, PATHINFO_EXTENSION);
