@@ -1,3 +1,16 @@
+//limit checkbox selection
+function onSelectStudent(){
+    $("input[name=chk]").change(function(){
+        var max= 3;
+        if( $("input[name=chk]:checked").length == max ){
+            $("input[name=chk]").attr('disabled', 'disabled');
+            $("input[name=chk]:checked").removeAttr('disabled');
+        }else{
+            $("input[name=chk]").removeAttr('disabled');
+        }
+    })
+}
+
 function accept_group() {
     var found = false;
     var count = 0;
@@ -38,7 +51,7 @@ function getStudentList() {
     xhttp.send();
 
     document.getElementById("display_branch").innerHTML = branch;
-    
+
     //Search Bar for table
     $(document).ready(function () {
         $("#myInput").on("keyup", function () {
@@ -50,4 +63,5 @@ function getStudentList() {
     });
     var x = document.getElementById("search_branch");
     x.style.display = "block";
+
 }

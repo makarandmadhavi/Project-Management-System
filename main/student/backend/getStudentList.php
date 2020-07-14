@@ -14,6 +14,8 @@ $stmt->bind_param("s",$branch);
 $stmt->execute();
 $result = $stmt->get_result();
 
+
+
 echo '<table class="table table-hover table-bordered" id="student_list">';
 echo '<thead>';
 echo  '<tr>';
@@ -28,7 +30,7 @@ echo'</thead>';
 echo'<tbody id="page">';
 while($row = $result->fetch_assoc()):
 echo  '<tr class="single_row">';
-echo    '<td><input type="checkbox"></td>';
+echo    '<td><input class="single_checkbox" name="chk" type="checkbox" onchange="onSelectStudent()"></td>';
 echo    '<th scope="row">'. $row["id"].'</th>';
 echo    '<td>'. $row["name"].'</td>';
 echo    '<td>'. $row["rollno"].'</td>';

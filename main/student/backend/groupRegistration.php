@@ -74,8 +74,17 @@
     $stmt->bind_param("sss",$member1, $member2, $member3);
     $stmt->execute();
     $stmt->close();
-    
 
+    //insert group login details into login table
+    $login_type = 'student';
+    $stmt = $conn->prepare("insert into login(username, password, type)
+    values(?, ?, ?)");
+    $stmt->bind_param("sss",$groupId, $key, $login_type);
+    $stmt->execute();
+    $stmt->close();
+
+
+    //send email to group members
     include "../../classes/class.phpmailer.php"; // include the class name
     $mail = new PHPMailer(); // create a new object
     $mail->IsSMTP();         // enable SMTP
@@ -100,15 +109,6 @@
     $mail->Body = $body;
     $address = array();
     array_push($address, $mem1_email, $mem2_email, $mem3_email);
-    echo $mem1_email;
-    echo $mem2_email;
-    echo $mem3_email;
-    echo $address[0];
-    echo $address[1];
-    echo $address[2];
-    // while (list ($key, $val) = each ($address)) {
-    // $mail->AddAddress($val);
-    // }
     foreach($address as $key => $val){
         $mail->AddAddress($val);
     }
