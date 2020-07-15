@@ -23,62 +23,108 @@ if(isset($_SESSION['logintype'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap.min.css">
+
     <link rel="stylesheet" href="style.css">
 
     <title>RAIT</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
 
-        <h4 class="rait-text text-center">Ramrao Adik Institute of Technology</h4>
+    <div class="jumbotron ">
+        <div class="row ">
+            <div class="col-sm-6">
+                <div class="logodiv">
+                    <img id="logo" src="assets/images/rait.png" alt="logo">
+                </div>
+                <h1 class="display-4">Project Management</h1>
 
-    </nav>
-    <!-- login content starts here -->
-    <div class="container ">
-        <div class="row header">
+                <hr class="my-4">
 
-            <div class="logodiv">
-                <img id="logo" src="assets/images/Rait_logo.png" alt="logo">
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#registration" role="button">Student Registration</a>
+                </p>
             </div>
-            <div class="text-center titlediv">
-                <h1 id="title">Project Management System</h1>
+            <div class="col-sm-6">
+                <div style="max-width: 500px;" class="login-box container" id="enter">
+                    <div class="login-text">
+                        <h1 class="text-center"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</h1>
+                    </div>
+                    <div class="container">
+                        <!-- <form onsubmit="login()"> -->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="password" required>
+                        </div>
+                        <center>
+                            <button type="submit" onclick="login()" class="btn btn-success">login</button>
+                        </center>
+                        <!-- </form> -->
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-
-
-    <div style="max-width: 500px;" class="add-box container" id="enter">
-        <div>
-            <h1 class="text-center">Login</h1>
-        </div>
-        <div class="container">
-            <!-- <form onsubmit="login()"> -->
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="password" required>
-                </div>
-
+    <div id="registration" class="jumbotron">
+        <h1>Registration</h1>
+        <!--Filter start-->
+        <div class="container filter_box">
+            <div class="list_filters">
                 <center>
-                    <button type="submit" onclick="login()" class="btn btn-success">login</button>
+                    <p class="instruction">To form the group select your Branch : </p>
+
                 </center>
-            <!-- </form> -->
+                <form action="">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <select name="Branch" class="custom-select mb-3 filter" id="branch">
+                                <option selected>Select Branch</option>
+                                <option value="Computer">Computer Science</option>
+                                <option value="IT">Information Technology</option>
+                                <option value="EXTC">EXTC</option>
+                                <option value="ETRX">Electronics</option>
+                                <option value="Instrumentation">Instrumentation</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-secondary view_list" onclick="getStudentList()">View
+                                List</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </div>
 
+        <!--Table-->
+        <div class="container table_box">
+            <div id="search_branch">
+                <div class="row">
+                    <h5>Search in branch <span id="display_branch"></span> : &nbsp;&nbsp;</h5>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        id="myInput">
+                </div>
+            </div>
+
+            <div class="container table-responsive" id="student_table">
+
+            </div>
+        </div>
+        <!--Table Ends Here-->
     </div>
-    
-    
     <script src="assets/jquery-3.5.1.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="student/js/index.js"></script>
     <script src="index.js"></script>
-    <!-- login content ends here -->
 
 </body>
 
