@@ -1,5 +1,5 @@
 <?php
-    include 'config.php';
+    include 'conn.php';
 
     //for precise error
     error_reporting(E_ALL);
@@ -27,7 +27,7 @@
     //password ends
 
     //group_id
-    $stmt1 = $conn->prepare("select shift from students where name in (?, ?, ?)");
+    $stmt1 = $conn->prepare("select shift from student where name in (?, ?, ?)");
     echo $conn->error;
     $stmt1->bind_param("sss",$member1,$member2,$member3);
     $stmt1->execute();
@@ -63,14 +63,14 @@
     //group_id ends
 
     //insert group details into group table
-    $stmt = $conn->prepare("insert into groups(member1, member2, member3, group_username, group_password)
-    values(?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss",$member1, $member2, $member3, $groupId, $key);
+    $stmt = $conn->prepare("insert into groups(member1, member2, member3, groupname)
+    values(?, ?, ?, ?)");
+    $stmt->bind_param("ssss",$member1, $member2, $member3, $groupId);
     $stmt->execute();
     $stmt->close();
 
     //update students table
-    $stmt = $conn->prepare("UPDATE students SET isGrouped = 1 WHERE name in (?, ?, ?)");
+    $stmt = $conn->prepare("UPDATE student SET isGrouped = 1 WHERE name in (?, ?, ?)");
     $stmt->bind_param("sss",$member1, $member2, $member3);
     $stmt->execute();
     $stmt->close();
@@ -84,7 +84,7 @@
     $stmt->close();
 
 
-    //send email to group members
+   //send email to group members
     include "../../classes/class.phpmailer.php"; // include the class name
     $mail = new PHPMailer(); // create a new object
     $mail->IsSMTP();         // enable SMTP
@@ -95,7 +95,7 @@
     $mail->Port = 465; // or 587  465
     $mail->IsHTML(true);
     $mail->Username = "nikhil.ingale99@gmail.com"; //"teamtcrait@gmail.com";       //"tcteamrait@gmail.com";   // "halltktteam@gmail.com";
-    $mail->Password = "gunner645445"; //"teamtc@rait";                 //"raittcteam";             // "raithalltkt";
+    $mail->Password = ""; //"teamtc@rait";                 //"raittcteam";             // "raithalltkt";
     $mail->SetFrom("nikhil.ingale99@gmail.com");  //("teamtcrait@gmail.com");         //("tcteamrait@gmail.com");     // ("halltktteam@gmail.com");
     $mail->Subject = "Final Year Project Group Registration";
     $mail->SMTPOptions = array(
@@ -125,5 +125,5 @@
             alert(nl2br("Registered Successfully !"));
         </script>
         <?php
-    }
+    } 
 ?>

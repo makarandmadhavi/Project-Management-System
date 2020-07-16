@@ -1,29 +1,10 @@
 <?php
-  //two change in session
-  //changepassword and header
+
   include 'backend/conn.php';
   include 'student_header.php';
-  $login_details_query = $conn->query("SELECT * FROM  `login` WHERE username='".$user['groupname']."' ");
-  $login = $login_details_query->fetch_assoc();
-   $member_details_query = $conn->query("SELECT `member1`, `member2`, `member3` FROM `groups` WHERE groupname='".$user['groupname']."' ");
-  $member = $member_details_query->fetch_assoc();
-
-  $project_details_query = $conn->query("SELECT *  FROM `project` WHERE groupname='".$user['groupname']."' ");
-  $flag=0;
-  if($project_details_query->num_rows > 0)
-  {
-    $flag=1;
-    $project = $project_details_query->fetch_assoc();
-  }
-  
   
 
-  /* $sql = "SELECT *
-  FROM groups
-  INNER JOIN project ON groups.groupname = project.groupname"; 
-  $inner_join = $conn->query($sql);
-  $student_project = $inner_join->fetch_assoc();
-  $member_array= array("member1"=>$student_project['member1'],"member2"=> $student_project['member2'],"member3"=> $student_project['member3']); */
+ 
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +16,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../assets/bootstrap.min.css">
   <link rel="stylesheet" href="css/starter.css">  
+  <link rel="stylesheet" href="css/abstract.css">
   <link rel="stylesheet" href="css/studentdashboard.css">
   
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -44,11 +26,11 @@
 <body> 
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
-    <a href="#"><i class="fa fa-graduation-cap" aria-hidden="true" >Create Abstract</i></a>
-    <a href="#"><i class="fa fa-graduation-cap" aria-hidden="true" >Update Abstract</i></a>
+    <a href="index.php"><i class="fas fa-qrcode"></i>Dashboard</a>
+    <a href="abstract.php"><i class="fa fa-graduation-cap" aria-hidden="true" >Create Abstract</i></a>
+    <a href="update_abstract.php"><i class="fa fa-graduation-cap" aria-hidden="true" >Update Abstract</i></a>
     
-    <a href="#">Log out</a>
+    <a href="backend/logout.php">Log out</a>
   </div>
 
   <div id="main">
@@ -100,14 +82,14 @@
                     <form  action="backend/changepassword_backend.php" class= "changepassowrdform" method="POST">
                       <div class="form-group row">
                         <label for="new_password" class="change_password_text">Password</label>
-                        <input type="password" name="new_password" id="new_password" Required class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                        <input type="password" name="new_password" id="new_password"" Required class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
                         <label for="confirm_password" class="change_password_text">Password</label>
                         <input type="password" name="confirm_password" Required  id="confirm_password" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
 
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="confirmbutton" data-dismiss="modal" >Cancel</button>
-                        <button type="submit" class="btn btn-primary" onclick="validate()" id="confirmbutton" name="submit">Save password</button>
+                        <button type="submit" class="btn btn-primary" onclick="password_validate()" id="confirmbutton" name="submit">Save password</button>
                       </div>
                     </form>
                   </div>
@@ -116,113 +98,106 @@
           </div>
       </div>
   </div>
-  <!--group detail-->
-  <div class="Student container">
-      <table class="table table-hover table-bordered">
-          <thead class="thead-dark">
-              <tr>
-                  <th>Roll No</th>
-                  <th> Name</th>
-                  <th>Email</th>
-                  <th>Division</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $department="";
-            foreach($member as $x => $x_value) {
-              $student_details_query  = $conn->query("SELECT * FROM `student` WHERE name='".$x_value."' ");
-              $student = $student_details_query->fetch_assoc();
-              $department = $student['department'];
-              ?> 
-              <tr>
-              <td><?php echo $student['rollno'];?></td>
-              <td><?php echo $student['name'];?></td>
-              <td><?php echo $student['email'];?></td>
-              <td><?php echo $student['division'];?></td>
-              </tr> 
-              <?php
-              
-            }
-          ?>
-                        
-          </tbody>
-      </table>
-  </div>
-    <br>
-    <br>
-  </div>
-  <div class="project container">
-    <table class="table table-hover">
+    <!--input-->
+    <div class="container">
+		<div class="d-flex justify-content-center form-box">
+			<div class="user_card">
+      
+				<div class="d-flex justify-content-center">
+        <h1>Abstract</h1>
+       <!-- <?php
+        // $user = $_SESSION["username"];
         
-        <tbody>
-            <tr>
-            <tr>
-                <td>Department</td>
-                <td><b><?php echo $department;?></b></td>
-                
-            </tr>
-              
-                <td>Abstract Submitted:</td>
-                <td><b><?php  if(!$flag)
-                {
-                  echo "No";
-                }
-                else{
-                  echo "Yes";
-                }
-                ?></b></td>
+        //}
+        ?> -->
+				</div>
+				<div class="container">
+          <form  action="backend/abstract_backend.php" method="POST" enctype="multipart/form-data" style>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Project Name</label>
+              <input type="text" class="form-control" value="<?php echo $project['project_name'];?>" name="projectname" placeholder="Project Name" Required>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Domain</label>
+              <select id="domain" name="domain" class="form-control">
+                <option selected><?php echo $project['domain'];?></option>
+                <option>Machine Learning</option>
+                <option>Internet OF Things</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Project Abstract</label>
+            <textarea class="form-control" rows="3" name="abstract"  Required><?php echo $project['abstract'];?></textarea>
+          </div>
 
-            </tr>
-            <tr>
-                <td>Status</td>
-                <td><b><?php  if(!$flag)
-                {
-                  echo "No";
-                }
-                else{
-                  echo ($project['status']);
-                }
-                ?></b></td>
-                
-            </tr>
-            <tr>
-                <td>Mentor Allocated:</td>
-                <td><b><?php  
-                if(!$flag)
-                {
-                  echo "No";
-                }
-                else{
-                  if($project['mentor']=="")
-                  {
-                    echo "No";
-                  }
-                  else{
-                    echo $project['mentor'];
-                  }
-                  
-                }
-                ?></b></td>
-
-            </tr>
-            
-                       
-        </tbody>
-    </table>
-    </div>
+            <br>
+            <div class="row">
+              <div class="col-2 text-dark text-success text-right " id="label_title">
+                PPT
+              </div>
+              <div class="col-10">
+              <div class="custom-file">
+                    <input type="file" class="custom-file-input " name="ppt" id="file" onchange="return fileValidation()" placeholder="Upload the PPT in PDF format only*">
+                    <label class="custom-file-label" for="customFile">Upload the PPT in PDF format only*</label>
+                  </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-2 text-dark text-success text-right"  id="label_title">
+                Research paper 1:
+              </div>
+              <div class="col-10">
+                <div class="custom-file">
+                <input type="file" class="custom-file-input " name="researchpaper_1" id="customFile" >
+                <label class="custom-file-label" for="customFile">Choose First research paper</label>
+              </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-2 text-dark text-success text-right" id="label_title">
+                Research paper 2:
+              </div>
+              <div class="col-10 ">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input " name="researchpaper_2" id="customFile"  >
+                  <label class="custom-file-label" for="customFile">Choose Second research paper</label>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-2 text-dark text-success text-right " id="label_title">
+                Research paper 3:
+              </div>
+              <div class="col-10 ">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input " name="researchpaper_3" id="customFile" >
+                  <label class="custom-file-label" for="customFile">Choose Third research paper</label>
+                </div>
+              </div>
+            </div>
+            <br>
+						<div>
+					    <center><button type="submit" name="update_submit" class="btn login_btn" id="submit">Submit</button></center>
+				    </div>
+					</form>
+				</div>
+				
+				 
+			</div>
+		</div>
+  </div>
+  </div>
   <!--Footer-->
   <div class="jumbotron text-center" style="margin-bottom:0">
     <p class="footer-data">Footer</p>
   </div>
   <!--Footer Ends-->
 
-  
-  <!--Footer
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <p class="footer-data">Footer</p>
-  </div>
-  Footer Ends-->
   <script src="js/studentdashboard.js"></script>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -248,20 +223,7 @@
     <?php
    }
   ?>
-  <script>
-    
-    function validate(){
-      var user_id = $("#new_password").val();
-      var group_password = $("#confirm_password").val();
-      
-      if(user_id!=group_password){
-        alert("Password and Confirm password should match!");
-        window.href.location='studentdashboard.php';
-      }
-    }
-
-  </script>
-</div>
+  <script src="js/abstract.js"></script>
 
 
    

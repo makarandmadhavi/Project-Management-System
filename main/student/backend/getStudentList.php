@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'conn.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 $branch = $_GET['br'];
 
 
-$stmt = $conn->prepare("select id, name, rollno, batch, division from students where branch = ? AND isGrouped = 0");
+$stmt = $conn->prepare("select id, name, rollno, batch, division from student where department = ? AND isGrouped = 0");
 echo $conn->error;
 $stmt->bind_param("s",$branch);
 $stmt->execute();

@@ -19,7 +19,7 @@
     <!--Head and Navbar-->
     <div>
         <img src="../assets/images/Rait_new_logo_png.png" class="top_logo">
-        <a href="../index.php"><button class="login_btn">Login</button></a>
+        <button class="login_btn" onclick="document.location='../index.php'">Login</button>
     </div>
 
     <nav class="navbar navbar-expand-lg primary_color navbar-dark nav_heading">

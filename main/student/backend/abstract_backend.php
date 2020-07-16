@@ -1,12 +1,13 @@
 <?php
-session_start();
-include 'config.php';
+//session_start();
+include 'conn.php';
 //add login_header include '';
 // Uploads files
-include '../header.php';
+include '../student_header.php';
+$user = $_SESSION["username"];
 if (isset($_POST['submit'])) 
 { // if save button on the form is clicked
-  $user = $_SESSION["user"];
+  
   $result = $conn->query("Select groupname from project WHERE groupname='$user'");
   $check_login_query = $result->num_rows;
   if($check_login_query>0){
@@ -81,14 +82,15 @@ if (isset($_POST['submit']))
   $file4 = $_FILES['researchpaper_3']['tmp_name'];
   $size4 = $_FILES['researchpaper_3']['size'];
   $status = "pending";
+  echo $destination1,$destination2,$destination3,$destination4;
       // move the uploaded (temporary) file to the specified destination
       if (move_uploaded_file($file1, $destination1) && move_uploaded_file($file2, $destination2) && move_uploaded_file($file3, $destination3) && move_uploaded_file($file4, $destination4) )
       {
           $sql = "INSERT INTO `project`(`groupname`, `project_name`,`domain`, `abstract`, `ppt`, `research_paper_1`, `research_paper_2`, `research_paper_3`,`status`) VALUES ('$user','$title','$domain','$abstract','".$destination1."','".$destination2."','".$destination3."','".$destination4."','$status')";
           if ($conn->query($sql)) 
           {
-              
-              header("Location: ../../logout.php");        
+              echo"done!";
+              header("Location: ../index.php");        
           }
        else
         {?><script></script>
@@ -96,6 +98,21 @@ if (isset($_POST['submit']))
           echo "$conn->error";
         }
       }
+}
+
+
+//update_abstract
+if (isset($_POST['update_submit'])) {
+  $title = $_POST["projectname"];
+  $domain = $_POST["domain"];
+  $abstract = $_POST["abstract"];
+  $update_details_query = $conn->query("UPDATE `project` SET `project_name`='$title',`domain`='$domain',`abstract`='$abstract'  WHERE `groupname`='$user'");
+  header("Location:../index.php");
+  
+
+
+
+
 }
 
 ?>

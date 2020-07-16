@@ -1,5 +1,5 @@
 <?php 
-    include 'backend/config.php';
+    include 'backend/conn.php';
 
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
@@ -8,7 +8,7 @@
     $mem2 = $_GET["para2"];
     $mem3 = $_GET["para3"];
 
-    $stmt1 = $conn->prepare("select email, contact from students where name = ?");
+    $stmt1 = $conn->prepare("select email, phone from student where name = ?");
     echo $conn->error;
     $stmt1->bind_param("s",$mem1);
     $stmt1->execute();
@@ -20,7 +20,7 @@
 
     $stmt1->close();
 
-    $stmt2 = $conn->prepare("select email, contact from students where name = ?");
+    $stmt2 = $conn->prepare("select email, phone from student where name = ?");
     echo $conn->error;
     $stmt2->bind_param("s",$mem2);
     $stmt2->execute();
@@ -32,7 +32,7 @@
 
     $stmt2->close();
 
-    $stmt3 = $conn->prepare("select email, contact from students where name = ?");
+    $stmt3 = $conn->prepare("select email, phone from student where name = ?");
     echo $conn->error;
     $stmt3->bind_param("s",$mem3);
     $stmt3->execute();

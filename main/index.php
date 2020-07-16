@@ -26,7 +26,7 @@ if(isset($_SESSION['logintype'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap.min.css">
-
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style.css">
 
     <title>RAIT</title>
@@ -75,50 +75,42 @@ if(isset($_SESSION['logintype'])){
     </div>
     <div id="registration" class="jumbotron">
         <h1>Registration</h1>
-        <!--Filter start-->
-        <div class="container filter_box">
-            <div class="list_filters">
+         <!--Filter start-->
+    
+    <div class="container filter_box">
+        <div class="list_filters">
+            <form action="">
+                <center><p class="instruction">To form the group select your Branch : </p></center>
                 <center>
-                    <p class="instruction">To form the group select your Branch : </p>
-
+                <select name="Branch" class="custom-select mb-3 filter" id="branch">
+                    <option selected>Select Branch</option>
+                    <option value="Computer">Computer Science</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="EXTC">EXTC</option>
+                    <option value="ETRX">Electronics</option>
+                    <option value="Instrumentation">Instrumentation</option>
+                </select>
+                <button type="button" class="btn btn-secondary view_list" onclick="getStudentList()">View List</button>
                 </center>
-                <form action="">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <select name="Branch" class="custom-select mb-3 filter" id="branch">
-                                <option selected>Select Branch</option>
-                                <option value="Computer">Computer Science</option>
-                                <option value="IT">Information Technology</option>
-                                <option value="EXTC">EXTC</option>
-                                <option value="ETRX">Electronics</option>
-                                <option value="Instrumentation">Instrumentation</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <button type="button" class="btn btn-secondary view_list" onclick="getStudentList()">View
-                                List</button>
-                        </div>
-                    </div>
+            </form>
+        </div>
+    </div>
 
-                </form>
+    <!--Table-->
+    <div class="container table_box">
+        <div id="search_branch">
+            <div class="row">
+                <h5>Search in branch <span id="display_branch"></span> : &nbsp;&nbsp;</h5>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="myInput">
             </div>
         </div>
+    
+        <div class="container table-responsive" id="student_table">
 
-        <!--Table-->
-        <div class="container table_box">
-            <div id="search_branch">
-                <div class="row">
-                    <h5>Search in branch <span id="display_branch"></span> : &nbsp;&nbsp;</h5>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                        id="myInput">
-                </div>
-            </div>
-
-            <div class="container table-responsive" id="student_table">
-
-            </div>
         </div>
-        <!--Table Ends Here-->
+    </div>
+    <!--Table Ends Here-->
+
     </div>
     <script src="assets/jquery-3.5.1.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>

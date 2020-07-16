@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2020 at 07:39 PM
+-- Generation Time: Jul 16, 2020 at 01:09 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -63,6 +63,13 @@ CREATE TABLE `faculty` (
   `department` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `faculty`
+--
+
+INSERT INTO `faculty` (`id`, `name`, `email`, `domain`, `department`) VALUES
+(1, 'John', 'john@example.com', 'ML', 'IT');
+
 -- --------------------------------------------------------
 
 --
@@ -74,11 +81,15 @@ CREATE TABLE `groups` (
   `groupname` varchar(255) NOT NULL,
   `member1` varchar(255) NOT NULL,
   `member2` varchar(255) NOT NULL,
-  `member3` varchar(255) NOT NULL,
-  `domain` varchar(255) NOT NULL,
-  `projectname` varchar(255) NOT NULL,
-  `projectdetails` longtext NOT NULL
+  `member3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `groups`
+--
+
+INSERT INTO `groups` (`id`, `groupname`, `member1`, `member2`, `member3`) VALUES
+(1, 'f_1', 'piyush', 'nikhil', 'makarand');
 
 -- --------------------------------------------------------
 
@@ -87,10 +98,46 @@ CREATE TABLE `groups` (
 --
 
 CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
   `username` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
-  `type` varchar(10) NOT NULL
+  `type` varchar(10) NOT NULL,
+  `change_password` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `password`, `type`, `change_password`) VALUES
+(1, 'f_1', '123', 'student', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project`
+--
+
+CREATE TABLE `project` (
+  `id` int(11) NOT NULL,
+  `groupname` varchar(255) NOT NULL,
+  `project_name` varchar(500) NOT NULL,
+  `domain` varchar(255) NOT NULL,
+  `abstract` longtext NOT NULL,
+  `ppt` varchar(255) NOT NULL,
+  `research_paper_1` varchar(255) NOT NULL,
+  `research_paper_2` varchar(255) NOT NULL,
+  `research_paper_3` varchar(255) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `mentor` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `project`
+--
+
+INSERT INTO `project` (`id`, `groupname`, `project_name`, `domain`, `abstract`, `ppt`, `research_paper_1`, `research_paper_2`, `research_paper_3`, `status`, `mentor`) VALUES
+(57, 'f_1', 'web', 'Machine Learning', 'fdvdfg', '../uploads/5f100e3162e3faptwhatjr.pdf', '../uploads/5f100e3162e79aptwhatjr.pdf', '../uploads/5f100e3162e7faptwhatjr.pdf', '../uploads/5f100e3162e85aptwhatjr.pdf', 'pending', '');
 
 -- --------------------------------------------------------
 
@@ -107,8 +154,20 @@ CREATE TABLE `student` (
   `year` varchar(10) NOT NULL,
   `division` varchar(1) NOT NULL,
   `batch` varchar(2) NOT NULL,
-  `phone` varchar(13) NOT NULL
+  `phone` varchar(13) NOT NULL,
+  `shift` int(11) NOT NULL,
+  `isGrouped` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`id`, `name`, `rollno`, `email`, `department`, `year`, `division`, `batch`, `phone`, `shift`, `isGrouped`) VALUES
+(31, 'piyush', '17IT1', 'piyushjha65@gmail.com', 'IT', 'te', 'A', 'A1', '35', 1, 1),
+(34, 'nikhil', '17IT111', 'piyushjha65@gmail.com', 'IT', 'te', 'A', 'A1', '35', 0, 1),
+(35, 'makarand', '17IT10127', 'piyushjha65@gmail.com', 'IT', 'te', 'A', 'A1', '35', 1, 1),
+(36, 'mansi', '174cx', 'FSD', 'F', 'te', 'A', 'A1', '35', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -142,7 +201,13 @@ ALTER TABLE `groups`
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `project`
+--
+ALTER TABLE `project`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `student`
@@ -171,19 +236,31 @@ ALTER TABLE `evaluation`
 -- AUTO_INCREMENT for table `faculty`
 --
 ALTER TABLE `faculty`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `project`
+--
+ALTER TABLE `project`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
