@@ -8,6 +8,7 @@
     padding: 10px;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
 }
 
 .table_box{
@@ -15,6 +16,7 @@
     /* padding: 20px; */
     margin-top: 20px;
     margin-bottom: 30px;
+    background-color: white;
 }
 
 .filter{
@@ -94,5 +96,13 @@
     .filter{
         width: 100%;
         margin: 0px;
+    }
+
+    #myInput{
+        width: 250px;
+    }
+
+    .search_row{
+        justify-content: center;
     }
 }

@@ -45,7 +45,7 @@ if(isset($_SESSION['logintype'])){
                 <hr class="my-4">
 
                 <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="#registration" role="button">Student Registration</a>
+                    <a class="btn btn-primary btn-lg" href="#registration" role="button">Group Registration</a>
                 </p>
             </div>
             <div class="col-sm-6">
@@ -74,7 +74,7 @@ if(isset($_SESSION['logintype'])){
         </div>
     </div>
     <div id="registration" class="jumbotron">
-        <h1>Registration</h1>
+        <center><h1>Group Registration</h1></center>
          <!--Filter start-->
     
     <div class="container filter_box">
@@ -99,7 +99,7 @@ if(isset($_SESSION['logintype'])){
     <!--Table-->
     <div class="container table_box">
         <div id="search_branch">
-            <div class="row">
+            <div class="row search_row">
                 <h5>Search in branch <span id="display_branch"></span> : &nbsp;&nbsp;</h5>
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="myInput">
             </div>
