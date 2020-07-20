@@ -26,6 +26,7 @@ if(isset($_SESSION['logintype'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/jquery.dataTables.min.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style.css">
 
@@ -98,13 +99,6 @@ if(isset($_SESSION['logintype'])){
 
     <!--Table-->
     <div class="container table_box">
-        <div id="search_branch">
-            <div class="row search_row">
-                <h5>Search in branch <span id="display_branch"></span> : &nbsp;&nbsp;</h5>
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="myInput">
-            </div>
-        </div>
-    
         <div class="container table-responsive" id="student_table">
 
         </div>
@@ -113,6 +107,7 @@ if(isset($_SESSION['logintype'])){
 
     </div>
     <script src="assets/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="assets/jquery.dataTables.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="student/js/index.js"></script>

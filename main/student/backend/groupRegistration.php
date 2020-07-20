@@ -85,45 +85,45 @@
 
 
    //send email to group members
-    include "../../classes/class.phpmailer.php"; // include the class name
-    $mail = new PHPMailer(); // create a new object
-    $mail->IsSMTP();         // enable SMTP
-    $mail->SMTPDebug = 1;    // debugging: 1 = errors and messages, 2 = messages only
-    $mail->SMTPAuth = true;  // authentication enabled
-    $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
-    $mail->Host = "smtp.gmail.com";
-    $mail->Port = 465; // or 587  465
-    $mail->IsHTML(true);
-    $mail->Username = "nikhil.ingale99@gmail.com"; //"teamtcrait@gmail.com";       //"tcteamrait@gmail.com";   // "halltktteam@gmail.com";
-    $mail->Password = ""; //"teamtc@rait";                 //"raittcteam";             // "raithalltkt";
-    $mail->SetFrom("nikhil.ingale99@gmail.com");  //("teamtcrait@gmail.com");         //("tcteamrait@gmail.com");     // ("halltktteam@gmail.com");
-    $mail->Subject = "Final Year Project Group Registration";
-    $mail->SMTPOptions = array(
-        'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-        )
-    );
-    $body = nl2br("Your group have been successfully registered for Final Year Project.\n Your group members are \n 1) $member1 \n 2) $member2 \n 3) $member3 \n Complete your project abstract submission by logging into the system using your Group Login Credentials as followed. \n Group Username : ".$groupId." \n Password : ".$key);
-    $mail->Body = $body;
-    $address = array();
-    array_push($address, $mem1_email, $mem2_email, $mem3_email);
-    foreach($address as $key => $val){
-        $mail->AddAddress($val);
-    }
+    // include "../../classes/class.phpmailer.php"; // include the class name
+    // $mail = new PHPMailer(); // create a new object
+    // $mail->IsSMTP();         // enable SMTP
+    // $mail->SMTPDebug = 1;    // debugging: 1 = errors and messages, 2 = messages only
+    // $mail->SMTPAuth = true;  // authentication enabled
+    // $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+    // $mail->Host = "smtp.gmail.com";
+    // $mail->Port = 465; // or 587  465
+    // $mail->IsHTML(true);
+    // $mail->Username = "nikhil.ingale99@gmail.com"; //"teamtcrait@gmail.com";       //"tcteamrait@gmail.com";   // "halltktteam@gmail.com";
+    // $mail->Password = ""; //"teamtc@rait";                 //"raittcteam";             // "raithalltkt";
+    // $mail->SetFrom("nikhil.ingale99@gmail.com");  //("teamtcrait@gmail.com");         //("tcteamrait@gmail.com");     // ("halltktteam@gmail.com");
+    // $mail->Subject = "Final Year Project Group Registration";
+    // $mail->SMTPOptions = array(
+    //     'ssl' => array(
+    //         'verify_peer' => false,
+    //         'verify_peer_name' => false,
+    //         'allow_self_signed' => true
+    //     )
+    // );
+    // $body = nl2br("Your group have been successfully registered for Final Year Project.\n Your group members are \n 1) $member1 \n 2) $member2 \n 3) $member3 \n Complete your project abstract submission by logging into the system using your Group Login Credentials as followed. \n Group Username : ".$groupId." \n Password : ".$key);
+    // $mail->Body = $body;
+    // $address = array();
+    // array_push($address, $mem1_email, $mem2_email, $mem3_email);
+    // foreach($address as $key => $val){
+    //     $mail->AddAddress($val);
+    // }
                                                 
             
-    if(!$mail->Send())
-        {
-        echo "Mailer Error: " . $mail->ErrorInfo;
-        }
-        else
-    {
-        ?>
-        <script>
-            alert(nl2br("Registered Successfully !"));
-        </script>
-        <?php
-    } 
+    // if(!$mail->Send())
+    //     {
+    //     echo "Mailer Error: " . $mail->ErrorInfo;
+    //     }
+    //     else
+    // {
+    //     ?>
+    //     <script>
+    //         alert(nl2br("Registered Successfully !"));
+    //     </script>
+    //     <?php
+    // } 
 ?>

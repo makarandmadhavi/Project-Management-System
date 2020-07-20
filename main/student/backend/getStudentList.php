@@ -40,7 +40,7 @@ echo  '</tr>';
 endwhile;
 echo '</tbody>';
 echo '</table>';
-echo '<button type="button" onclick="accept_group()" class="btn btn-secondary submit_group">Proceed with Selected Members</button>';
+echo '<center><button type="button" onclick="accept_group()" class="btn btn-secondary submit_group">Proceed with Selected Members</button></center>';
 echo '<br>';
 echo '<br>';
 
