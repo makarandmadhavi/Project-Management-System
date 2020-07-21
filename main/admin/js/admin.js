@@ -37,8 +37,8 @@ function add_faculty(f) {
     return false;
 }
 
-function changetab(id) {
-    $("#main-content").load(id+".php");
+function changetab(tabname) {
+    $("#main-content").load(tabname+".php");
     $("li").removeClass("active");
     $("#"+id).addClass("active");
 }

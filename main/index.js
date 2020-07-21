@@ -15,7 +15,7 @@ function login() {
             success: function (data) {
                 //data is returned here
                 console.log(data);
-                if (data == "incorrect") {
+                if (data == "incorrect" || data == "") {
                     alert("Incorrect username password!");
                 } else {
                    window.location = data+'/';
@@ -65,7 +65,6 @@ function accept_group() {
 
 
 function getStudentList() {
-    document.getElementById("student_table").style.padding = "30px";
     var f = document.getElementById("branch");
     var branch = f.options[f.selectedIndex].value;
 
@@ -75,15 +74,22 @@ function getStudentList() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("student_table").innerHTML = this.responseText;
         }
-
-    $('#student_list').dataTable();
-    
- 
     };
     xhttp.open("GET", "student/backend/getStudentList.php?br=" + branch, true);
     xhttp.send();
 
-    
-    // document.getElementById("display_branch").innerHTML = branch;
+    document.getElementById("display_branch").innerHTML = branch;
+
+    //Search Bar for table
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#page tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    var x = document.getElementById("search_branch");
+    x.style.display = "block";
 
 }
