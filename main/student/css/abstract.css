@@ -101,3 +101,9 @@ html {
     
 
 }
+#otherdomain{
+    display: block;
+    margin-top: 13px;
+    width: inherit;
+    padding-left: 13px;
+}

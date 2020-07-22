@@ -21,5 +21,16 @@ function fileValidation() {
     $(this).next('.custom-file-label').addClass("selected").html(fileName); 
  });
 
- //password validate
+
+//check other domain
+ function Checkdomain(val){
+   
+  var element=document.getElementById('otherdomain');
+  if(val=='others')  
+    element.style.display='block';
+  else{
+    element.value = val;
+    element.style.display='none';
+  }
+ }
  

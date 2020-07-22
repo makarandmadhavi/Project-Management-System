@@ -94,7 +94,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="confirmbutton" data-dismiss="modal" >Cancel</button>
-                        <button type="submit" class="btn btn-primary" onclick="password_validate()" id="confirmbutton" name="submit">Save password</button>
+                        <button type="submit" class="btn btn-primary" onclick="return password_validate()" id="confirmbutton" name="submit">Save password</button>
                       </div>
                     </form>
                   </div>
@@ -125,11 +125,14 @@
             </div>
             <div class="form-group col-md-6">
               <label>Domain</label>
-              <select id="domain" name="domain" class="form-control">
+              <select id="domain" name="domain" onchange='Checkdomain(this.value);' class="form-control">
                 <option selected>Choose</option>
                 <option>Machine Learning</option>
                 <option>Internet OF Things</option>
+                <option value="others">others</option>
+
               </select>
+              <input type="text" name="domain"  id="otherdomain" style='display:none;'  placeholder="Enter the other topic"/><br>
             </div>
           </div>
           <div class="form-group">
@@ -180,7 +183,7 @@
               </div>
               <div class="col-10 ">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input " name="researchpaper_3" id="customFile" Required >
+                  <input type="file" class="custom-file-input " name="researchpaper_3" id="customFile"  >
                   <label class="custom-file-label" for="customFile">Choose Third research paper</label>
                 </div>
               </div>

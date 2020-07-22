@@ -77,14 +77,14 @@
                     <form  action="backend/changepassword_backend.php" class= "changepassowrdform" method="POST">
                       <div class="form-group row">
                         <label for="new_password" class="change_password_text">Password</label>
-                        <input type="password" name="new_password" id="new_password"" Required class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                        <input type="password" name="new_password" id="new_password"" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" Required >
                         <label for="confirm_password" class="change_password_text">Password</label>
-                        <input type="password" name="confirm_password" Required  id="confirm_password" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                        <input type="password" name="confirm_password"   id="confirm_password" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" Required >
 
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="confirmbutton" data-dismiss="modal" >Cancel</button>
-                        <button type="submit" class="btn btn-primary" onclick="validate()" id="confirmbutton" name="submit">Save password</button>
+                        <button type="submit" class="btn btn-primary" onclick="return password_validate()" id="confirmbutton" name="submit">Save password</button>
                       </div>
                     </form>
                   </div>
@@ -164,7 +164,7 @@
                 
             </tr>
             <tr>
-                <td>Mentor Allocated:</td>
+                <td>Project Supervisor Allocated:</td>
                 <td><b><?php  
                 if(!$flag)
                 {
@@ -193,7 +193,7 @@
   </div>
   <!--Footer Ends-->
 
-  <script src="js/studentdashboard.js"></script>
+ 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -204,7 +204,6 @@
   </script>
   <script src="../assets/bootstrap.min.js"></script>
   <?php
-    
     if($login['change_password']==0)
    {
      ?> 
@@ -218,21 +217,8 @@
     <?php 
    }
   ?>
-  <script>
-    
-    function validate(){
-      var user_id = $("#new_password").val();
-      var group_password = $("#confirm_password").val();
-      
-      if(user_id!=group_password){
-        alert("Password and Confirm password should match!");
-        window.href.location='studentdashboard.php';
-      }
-    }
-
-  </script>
 </div>
-
+<script src="js/studentdashboard.js"></script>
 
    
 </body>
