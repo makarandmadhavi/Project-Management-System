@@ -80,7 +80,7 @@
                         <input type="password" name="new_password" id="new_password"" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" Required >
                         <label for="confirm_password" class="change_password_text">Password</label>
                         <input type="password" name="confirm_password"   id="confirm_password" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" Required >
-
+                        <small class="text-muted mx-4 mt-2"> At least 8 characters long. - At least 1 uppercase, AND at least 1 lowercase - At least 1 digit AND at least 1 alphanumeric.</small>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="confirmbutton" data-dismiss="modal" >Cancel</button>
