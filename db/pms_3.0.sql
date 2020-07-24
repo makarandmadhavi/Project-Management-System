@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2020 at 03:23 PM
+-- Generation Time: Jul 24, 2020 at 03:31 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -46,17 +46,16 @@ CREATE TABLE `faculty` (
   `phone` varchar(13) DEFAULT NULL,
   `emailid` varchar(31) DEFAULT NULL,
   `desig` varchar(21) DEFAULT NULL,
-  `domain` varchar(255) NOT NULL,
-  `is_evaluator` int(1) NOT NULL DEFAULT 0
+  `domain` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `faculty`
 --
 
-INSERT INTO `faculty` (`sdrn`, `name`, `dept_name`, `phone`, `emailid`, `desig`, `domain`, `is_evaluator`) VALUES
-(13, 'Andrew111 Ng', 'IT', '9874111135', 'andr111ew@gmail.com', 'p334rof', 'Machine learning', 0),
-(123, 'Andrew Ng', 'IT', '987435', 'andrew@gmail.com', 'prof', 'Internet OF Things', 0);
+INSERT INTO `faculty` (`sdrn`, `name`, `dept_name`, `phone`, `emailid`, `desig`, `domain`) VALUES
+(13, 'Andrew111 Ng', 'IT', '9874111135', 'andr111ew@gmail.com', 'p334rof', 'Machine learning'),
+(123, 'Andrew Ng', 'IT', '987435', 'andrew@gmail.com', 'prof', 'Internet OF Things');
 
 -- --------------------------------------------------------
 
