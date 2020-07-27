@@ -1,7 +1,7 @@
 <?php
     include 'conn.php';
     
-    $sql = "SELECT * FROM faculty";
+    $sql = "SELECT * FROM groups";
     $result = $conn->query($sql);
    
     if($result){
@@ -10,15 +10,19 @@
 ?>
 
 <tr>
-    <th scope="row"><?=$row['sdrn']?></th>
-    <td><?=$row['name']?></td>
-    <td><?=$row['emailid']?></td>
-    <td><?=$row['dept_name']?></td>
+    <th scope="row"><?=$row['id']?></th>
+    <td><?=$row['groupname']?></td>
+    <td><?=$row['member1']?></td>
+    <td><?=$row['member2']?></td>
+    <td><?=$row['member3']?></td>
     <td><button onclick="edit_faculty(<?=$row['id']?>)" class="btn btn-sm btn-primary">Edit</button></td>
 </tr>
 
 <?php
         }
+    ?>
+    <script>$('#allgroups_list').dataTable();</script>
+    <?php
     } else {
         echo 'Error';
     }

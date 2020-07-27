@@ -37,8 +37,21 @@ function add_faculty(f) {
     return false;
 }
 
+
 function changetab(tabname) {
     $("#main-content").load(tabname+".php");
+    $("li").removeClass("active");
+    $("#"+id).addClass("active");
+}
+
+
+function changetabforgroups(tabname, proj_status) {
+    if(proj_status == 'groups'){
+        $("#main-content").load(tabname+".php");
+    } else {
+        $("#main-content").load(tabname+".php?project_status="+proj_status);
+    }
+    
     $("li").removeClass("active");
     $("#"+id).addClass("active");
 }

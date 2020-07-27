@@ -1,5 +1,3 @@
-
-
 <?php  
  include 'conn.php';
  $output=""; 
@@ -24,9 +22,8 @@
                <td>'.$row["sdrn"].'</td>   
                <td>'.$row["name"].'</td>
                <td>'.$row["emailid"].'</td>
-               <td>'.$row["domain"].'</td>      
-                
-           </tr>  
+               <td>'.$row["domain"].'</td>
+           </tr>
       ';  
  }  
  $output .= '</table><br /><div align="center">';  

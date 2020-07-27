@@ -1,0 +1,19 @@
+#row_data1{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+#row_data2{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#data_span{
+    font-weight: 600;
+}
+
+.grp_details{
+    padding: 10px;
+    padding-left: 40px;
+}
