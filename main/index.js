@@ -50,6 +50,7 @@ function accept_group() {
             count = count + 1;
             members.push(document.getElementById('student_list').rows[this.rowIndex].cells[2]
                 .innerHTML);
+            
         } else {
             //alert "NOthing found"
             //found=false;

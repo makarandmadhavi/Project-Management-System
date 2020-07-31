@@ -11,6 +11,7 @@
                   <th> Name</th>
                   <th> Emaik</th>
                   <th> Domain</th>
+                  
 
 
           </thead> 
@@ -23,6 +24,7 @@
                <td>'.$row["name"].'</td>
                <td>'.$row["emailid"].'</td>
                <td>'.$row["domain"].'</td>
+               
            </tr>
       ';  
  }  
