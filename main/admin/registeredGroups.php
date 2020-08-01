@@ -1,3 +1,4 @@
+<?php include 'admin_header.php'; ?>
 <?php include '../templates/header_start.php'; ?>
 
 <!-- Custom css files go here -->
@@ -42,7 +43,7 @@
         
 
       </ul>
-
+      <a href="logout.php" class='mx-4'><button type="button" class="btn btn-success">Logout</button></a>
     </div>
   </nav>
 

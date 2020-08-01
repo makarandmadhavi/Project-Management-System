@@ -21,13 +21,13 @@
         if($result2){
             $row2 = $result2->fetch_assoc();
 
-            $add = '../../student/uploads/'.$row['ppt'];
+            $add = '../../student/uploads/'.$row['groupname']."/".$row['ppt'];
             
-            $paper1 = '../../student/uploads/'.$row['research_paper_1'];
+            $paper1 = '../../student/uploads/'.$row['groupname']."/".$row['research_paper_1'];
 
-            $paper2 = '../../student/uploads/'.$row['research_paper_2'];
+            $paper2 = '../../student/uploads/'.$row['groupname']."/".$row['research_paper_2'];
 
-            $paper3 = '../../student/uploads/'.$row['research_paper_3'];
+            $paper3 = '../../student/uploads/'.$row['groupname']."/".$row['research_paper_3'];
     
 ?>
     <div class="card-header">
@@ -106,7 +106,7 @@
                 <h6 id="row_data1">Project Presentation : </h6>
             </div>
             <div class="col-9">
-                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$add?>">Veiw Presentation</a>
+                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$add?>" target="_blank">View Presentation</a>
             </div>
         </div>
         <br>
@@ -115,13 +115,13 @@
                 <h6 id="row_data1">Research Papers Referred : </h6>
             </div>
             <div class="col-3">
-                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper1?>">View Paper 1</a>
+                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper1?>" target="_blank">View Paper 1</a>
             </div>
             <div class="col-3">
-                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper2?>">View Paper 2</a>
+                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper2?>" target="_blank">View Paper 2</a>
             </div>
             <div class="col-3">
-                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper3?>">View Paper 3</a>
+                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper3?>" target="_blank">View Paper 3</a>
             </div>
         </div>
     </div>

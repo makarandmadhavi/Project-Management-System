@@ -1,3 +1,4 @@
+<?php include 'admin_header.php'; ?>
 <?php include '../templates/header_start.php'; ?>
 
 <!-- Custom css files go here -->
@@ -13,7 +14,7 @@
   <!--<img src="files/images/Rait_new_logo_png.png" class="top_logo">-->
   <div class="chip">
     <img src="../assets/images/img_avatar.png" alt="Person" width="96" height="96">
-    Username
+    ADMIN
   </div>
   <nav class="navbar navbar-expand-lg primary_color navbar-dark">
     <a class="navbar-brand" href="#"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></a>
@@ -22,8 +23,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <a href="logout.php" class='mx-4'><button type="button" class="btn btn-success">Logout</button></a>
     </div>
+    
   </nav>
 
     <div id="main-content" class="container">

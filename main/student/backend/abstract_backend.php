@@ -12,11 +12,11 @@ if (isset($_POST['submit']))
   $check_login_query = $result->num_rows;
   if($check_login_query>0){
     echo'<script>alert("for resubmission go to update abstract page");</script>';
-    header("Location: ../update_abstract.php");
+    //header("Location: ../update_abstract.php");
   }
 
 
-
+  mkdir("../uploads/".$user);
   $title = $_POST["projectname"];
   $domain = $_POST["domain"];
 
@@ -28,7 +28,8 @@ if (isset($_POST['submit']))
   $filename1 = join("_",$filename1);
 
   // destination of the file on the server
-  $destination1 = "../uploads/". uniqid() . basename($filename1);;
+  $unique1=uniqid();
+  $destination1 = "../uploads/".$user."/". $unique1 . basename($filename1);;
 
   // get the file extension
   $extension1 = pathinfo($filename1, PATHINFO_EXTENSION);
@@ -37,13 +38,16 @@ if (isset($_POST['submit']))
   $file1 = $_FILES['ppt']['tmp_name'];
   $size1 = $_FILES['ppt']['size'];
 
+
+
   //research paper1
+  $unique2=uniqid();
   $filename2 = $_FILES['researchpaper_1']['name'];
   $filename2 = explode(" ",$filename2);
   $filename2 = join("_",$filename2);
 
   // destination of the file on the server
-  $destination2 = "../uploads/". uniqid() . basename($filename2);;
+  $destination2 = "../uploads/".$user."/". $unique2 . basename($filename2);;
 
   // get the file extension
   $extension2 = pathinfo($filename2, PATHINFO_EXTENSION);
@@ -53,12 +57,13 @@ if (isset($_POST['submit']))
   $size2 = $_FILES['researchpaper_1']['size'];
 
   //research paper2
+  $unique3=uniqid();
   $filename3 = $_FILES['researchpaper_2']['name'];
   $filename3 = explode(" ",$filename3);
   $filename3 = join("_",$filename3);
 
   // destination of the file on the server
-  $destination3 = "../uploads/". uniqid() . basename($filename3);;
+  $destination3 = "../uploads/".$user."/". $unique3 . basename($filename3);;
 
   // get the file extension
   $extension3 = pathinfo($filename3, PATHINFO_EXTENSION);
@@ -68,12 +73,13 @@ if (isset($_POST['submit']))
   $size3 = $_FILES['researchpaper_2']['size'];
 
   //research paper3
+  $unique4=uniqid();
   $filename4 = $_FILES['researchpaper_3']['name'];
   $filename4 = explode(" ",$filename4);
   $filename4 = join("_",$filename4);
   
   // destination of the file on the server
-  $destination4 = "../uploads/". uniqid() . basename($filename4);;
+  $destination4 = "../uploads/".$user."/". $unique4 . basename($filename4);;
 
   // get the file extension
   $extension4 = pathinfo($filename4, PATHINFO_EXTENSION);
@@ -82,11 +88,11 @@ if (isset($_POST['submit']))
   $file4 = $_FILES['researchpaper_3']['tmp_name'];
   $size4 = $_FILES['researchpaper_3']['size'];
   $status = "pending";
-
+  mkdir("../uploads/".$user);
       // move the uploaded (temporary) file to the specified destination
       if (move_uploaded_file($file1, $destination1) && move_uploaded_file($file2, $destination2) && move_uploaded_file($file3, $destination3))
       {
-          $sql = "INSERT INTO `project`(`groupname`, `project_name`,`domain`, `abstract`, `ppt`, `research_paper_1`, `research_paper_2`, `research_paper_3`,`status`) VALUES ('$user','$title','$domain','$abstract','".$destination1."','".$destination2."','".$destination3."','".$destination4."','$status')";
+          $sql = "INSERT INTO `project`(`groupname`, `project_name`,`domain`, `abstract`, `ppt`, `research_paper_1`, `research_paper_2`, `research_paper_3`,`status`) VALUES ('$user','$title','$domain','$abstract','".$unique1.$filename1."','".$unique2.$filename2."','".$unique3.$filename3."','".$unique4.$filename4."','$status')";
           if ($conn->query($sql)) 
           {
               echo"done!";
@@ -103,7 +109,6 @@ if (isset($_POST['submit']))
 
 //update_abstract
 if (isset($_POST['update_submit'])) {
-  
   $title = $_POST["projectname"];
   $domain = $_POST["domain"];
 
@@ -115,7 +120,8 @@ if (isset($_POST['update_submit'])) {
   $filename1 = join("_",$filename1);
 
   // destination of the file on the server
-  $destination1 = "../uploads/". uniqid() . basename($filename1);;
+  $unique1=uniqid();
+  $destination1 = "../uploads/".$user."/". $unique1 . basename($filename1);;
 
   // get the file extension
   $extension1 = pathinfo($filename1, PATHINFO_EXTENSION);
@@ -124,13 +130,16 @@ if (isset($_POST['update_submit'])) {
   $file1 = $_FILES['ppt']['tmp_name'];
   $size1 = $_FILES['ppt']['size'];
 
+
+
   //research paper1
+  $unique2=uniqid();
   $filename2 = $_FILES['researchpaper_1']['name'];
   $filename2 = explode(" ",$filename2);
   $filename2 = join("_",$filename2);
 
   // destination of the file on the server
-  $destination2 = "../uploads/". uniqid() . basename($filename2);;
+  $destination2 = "../uploads/".$user."/". $unique2 . basename($filename2);;
 
   // get the file extension
   $extension2 = pathinfo($filename2, PATHINFO_EXTENSION);
@@ -140,12 +149,13 @@ if (isset($_POST['update_submit'])) {
   $size2 = $_FILES['researchpaper_1']['size'];
 
   //research paper2
+  $unique3=uniqid();
   $filename3 = $_FILES['researchpaper_2']['name'];
   $filename3 = explode(" ",$filename3);
   $filename3 = join("_",$filename3);
 
   // destination of the file on the server
-  $destination3 = "../uploads/". uniqid() . basename($filename3);;
+  $destination3 = "../uploads/".$user."/". $unique3 . basename($filename3);;
 
   // get the file extension
   $extension3 = pathinfo($filename3, PATHINFO_EXTENSION);
@@ -155,12 +165,13 @@ if (isset($_POST['update_submit'])) {
   $size3 = $_FILES['researchpaper_2']['size'];
 
   //research paper3
+  $unique4=uniqid();
   $filename4 = $_FILES['researchpaper_3']['name'];
   $filename4 = explode(" ",$filename4);
   $filename4 = join("_",$filename4);
   
   // destination of the file on the server
-  $destination4 = "../uploads/". uniqid() . basename($filename4);;
+  $destination4 = "../uploads/".$user."/". $unique4 . basename($filename4);;
 
   // get the file extension
   $extension4 = pathinfo($filename4, PATHINFO_EXTENSION);
@@ -169,11 +180,11 @@ if (isset($_POST['update_submit'])) {
   $file4 = $_FILES['researchpaper_3']['tmp_name'];
   $size4 = $_FILES['researchpaper_3']['size'];
   $status = "pending";
-
+  mkdir("../uploads/".$user);
       // move the uploaded (temporary) file to the specified destination
       if (move_uploaded_file($file1, $destination1) && move_uploaded_file($file2, $destination2) && move_uploaded_file($file3, $destination3))
       {
-          $sql = "UPDATE `project` SET `project_name`='$title',`domain`='$domain',`abstract`='$abstract',`ppt`='$destination1',`research_paper_1`='$destination2',`research_paper_2`= '$destination3' ,`research_paper_3`='$destination4'  WHERE `groupname`='$user'";
+        $sql = "UPDATE `project` SET `project_name`='$title',`domain`='$domain',`abstract`='$abstract',`ppt`='$unique1$filename1',`research_paper_1`='$unique2$filename2',`research_paper_2`= '$unique3$filename3' ,`research_paper_3`='$unique4$filename4'  WHERE `groupname`='$user'";
           if ($conn->query($sql)) 
           {
               echo"done!";
@@ -208,12 +219,8 @@ if (isset($_POST['update_submit'])) {
 
 
 
-  $title = $_POST["projectname"];
-  $domain = $_POST["domain"];
-  $abstract = $_POST["abstract"];
 
-  $update_details_query = $conn->query("UPDATE `project` SET `project_name`='$title',`domain`='$domain',`abstract`='$abstract'  WHERE `groupname`='$user'");
-  header("Location:../index.php");
+      
   
 
 

@@ -34,7 +34,6 @@
     <a href="index.php"><i class="fas fa-qrcode"></i>Dashboard</a>
     <a href="abstract.php"><i class="fa fa-graduation-cap" aria-hidden="true" >Create Abstract</i></a>
     <a href="update_abstract.php"><i class="fa fa-graduation-cap" aria-hidden="true" >Update Abstract</i></a>
-    
     <a href="backend/logout.php">Log out</a>
   </div>
 

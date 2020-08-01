@@ -1,3 +1,4 @@
+<?php include 'admin_header.php'; ?>
 <?php include '../templates/header_start.php'; ?>
 
 
@@ -7,16 +8,7 @@
 <link rel="stylesheet" href="../assets/jquery.dataTables.min.css">
 
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
-  <a href="list.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>List</a>
-  <a href="#"><i class="fa fa-address-book" aria-hidden="true"></i>Registered Group</a>
-  <a href="#"><i class="fa fa-users" aria-hidden="true"></i>Group Allocation</a>
-  <a href="#"><i class="far fa-question-circle"></i>Evaluator Allocation</a>
-  <a href="#"><i class="fas fa-sliders-h"></i>Mentor Allocation</a>
-  <a href="#">Log out</a>
-</div>
+<?php include 'sidenav.php';?>
 
 <div id="main">
   <a href="http://www.dypatil.edu/mumbai/rait"><img src="../assets/images/Rait_logo.png" class="top_logo"></a>
@@ -45,7 +37,7 @@
         </li>
 
       </ul>
-
+      <a href="logout.php" class='mx-4'><button type="button" class="btn btn-success">Logout</button></a>
     </div>
   </nav>
   <!-- header end  -->

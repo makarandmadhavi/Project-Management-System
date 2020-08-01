@@ -7,5 +7,5 @@
   <a href="#"><i class="fa fa-users" aria-hidden="true"></i>Group Allocation</a>
   <a href="evaluator.php"><i class="far fa-question-circle"></i>Evaluator Allocation</a>
   <a href="#"><i class="fas fa-sliders-h"></i>Mentor Allocation</a>
-  <a href="#">Log out</a>
+  <a href="logout.php">Log out</a>
 </div>

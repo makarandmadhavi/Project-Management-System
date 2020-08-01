@@ -45,7 +45,7 @@
         
 
       </ul>
-
+<?php echo $_SESSION['username'];?>
     </div>
   </nav>
   <div id="main-content" class="container">
