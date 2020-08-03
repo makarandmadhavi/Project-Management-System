@@ -16,7 +16,7 @@
     function getevaluators(){
         include 'conn.php';
         $data = array();
-        $sql = "SELECT * FROM faculty";
+        $sql = "SELECT * FROM faculty WHERE `isEvaluator`=1";
         $result = $conn->query($sql);
         if($result){     
             while($row = $result -> fetch_assoc()){

@@ -13,8 +13,8 @@
      $output="";
      $status = array(0=>"Project Supervisor", 1=>"Evaluator and Project Supervisor");
      $checkbox = array(0=>"", 1=>"Disabled");  
-     $query = "SELECT * FROM faculty";  
-     $result = mysqli_query($conn, $query);  
+     $query = "SELECT * FROM `faculty` ORDER BY `isEvaluator` DESC";  
+     $result = $conn->query($query);  
      $output .= "  
      
      <table class='table table-hover table-bordered' id='pagination'>  
@@ -30,7 +30,7 @@
     
               </thead> 
      ";  
-     while($row = mysqli_fetch_array($result))  
+     while($row = $result->fetch_assoc())  
      {  
           $output .= '  
                <tr> 
@@ -38,7 +38,7 @@
                    <td>'.$row["name"].'</td>
                    
                    <td>'.$row["domain"].'</td>
-                   <td>'.$status[$row["isEvaluator"]].'</td>
+                   <td><b>'.$status[$row["isEvaluator"]].'</b></td>
                    <td class="text-center"><input type="checkbox" class="checkitem" value='.$row["sdrn"].' '.$checkbox[$row["isEvaluator"]].' ></td>
                </tr>
           ';  

@@ -136,7 +136,7 @@
           </div>
           <div class="form-group">
             <label>Project Abstract</label>
-            <textarea class="form-control" rows="3" name="abstract"  Required><?php echo $project['abstract'];?></textarea>
+            <textarea class="form-control" rows="10" name="abstract"  Required><?php echo $project['abstract'];?></textarea>
           </div>
 
             <br>
