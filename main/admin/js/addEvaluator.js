@@ -22,7 +22,7 @@ $('#assign').click(function(){
      var sdrn = $('.checkitem:checked').map(function(){
           return $(this).val()
      }).get().join(' ');
-
+     
      get_data();
      function get_data()  
      {   

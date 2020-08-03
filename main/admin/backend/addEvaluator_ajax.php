@@ -4,6 +4,9 @@
      $sdrn = str_replace(' ',',',$_GET['sdrn']);
      $result = $conn->query("UPDATE faculty SET isEvaluator=1 where sdrn in ($sdrn)");
      
+
+
+     
      
 
       
@@ -13,7 +16,7 @@
      $output="";
      $status = array(0=>"Project Supervisor", 1=>"Evaluator and Project Supervisor");
      $checkbox = array(0=>"", 1=>"Disabled");  
-     $query = "SELECT * FROM `faculty` ORDER BY `isEvaluator` DESC";  
+     $query = "SELECT * FROM `faculty`";  
      $result = $conn->query($query);  
      $output .= "  
      
@@ -51,5 +54,5 @@
  ?> 
 
 <script>
-  $('#pagination').dataTable();
+  $('#pagination').dataTable({"aaSorting": [[2,'asc']]});
 </script>
