@@ -1,6 +1,6 @@
 function fileValidation() { 
     var fileInput =  
-        document.getElementById('file'); 
+    document.getElementsByClassName('file')[0]; 
       
     var filePath = fileInput.value; 
   
@@ -9,7 +9,8 @@ function fileValidation() {
             /(\.pdf)$/i; 
       
     if (!allowedExtensions.exec(filePath)) { 
-        alert('Invalid file type'); 
+
+        alert('Upload file in pdf format only'); 
         fileInput.value = ''; 
         return false; 
     } 

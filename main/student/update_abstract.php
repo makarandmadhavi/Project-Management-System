@@ -108,7 +108,7 @@
 			<div class="user_card">
       
 				<div class="d-flex justify-content-center">
-        <h1>Abstract</h1>
+        <h1 class="mt-4">Update Your Abstract</h1>
        <!-- <?php
         // $user = $_SESSION["username"];
         
@@ -119,13 +119,13 @@
           <form  action="backend/abstract_backend.php" method="POST" enctype="multipart/form-data" style>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label>Project Name</label>
+              <label><b>Project Name</b></label>
               <input type="text" class="form-control" value="<?php echo $project['project_name'];?>" name="projectname" placeholder="Project Name" Required>
             </div>
             <div class="form-group col-md-6">
-              <label>Domain</label>
+              <label><b>Domain</b></label>
               <select id="domain" name="domain" onchange='Checkdomain(this.value);' class="form-control">
-                <option selected>Choose</option>
+                <option selected><?php echo $project['domain'];?></option>
                 <option>Machine Learning</option>
                 <option>Internet OF Things</option>
                 <option value="others">others</option>
@@ -135,55 +135,59 @@
             </div>
           </div>
           <div class="form-group">
-            <label>Project Abstract</label>
+            <label><b>Project Abstract</b></label>
             <textarea class="form-control" rows="10" name="abstract"  Required><?php echo $project['abstract'];?></textarea>
           </div>
 
             <br>
             <div class="row">
               <div class="col-2 text-dark text-success text-right " id="label_title">
-                PPT
+              <b>PPT</b>
               </div>
               <div class="col-10">
               <div class="custom-file">
-                    <input type="file" class="custom-file-input " name="ppt" id="file" onchange="return fileValidation()" placeholder="Upload the PPT in PDF format only*">
-                    <label class="custom-file-label" for="customFile">Upload the PPT in PDF format only*</label>
+                    <input type="file" class="custom-file-input file" name="ppt"  onchange="return fileValidation()" placeholder="Upload the PPT in PDF format only*" Required>
+                    <label class="custom-file-label" for="customFile"><?php echo substr($project['ppt'],13);?></label>
+                    <small class="text-muted">Upload the file in PDF format only</small>
                   </div>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col-2 text-dark text-success text-right"  id="label_title">
-                Research paper 1:
+              <b>Research paper 1:</b>
               </div>
               <div class="col-10">
                 <div class="custom-file">
-                <input type="file" class="custom-file-input " name="researchpaper_1" id="customFile" Required>
-                <label class="custom-file-label" for="customFile">Choose First research paper</label>
+                <input type="file" class="custom-file-input file " name="researchpaper_1" onchange="return fileValidation()"  Required>
+                <label class="custom-file-label" for="customFile"><?php echo substr($project['research_paper_1'],13);?></label>
+                <small class="text-muted">Upload the file in PDF format only</small>
               </div>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col-2 text-dark text-success text-right" id="label_title">
-                Research paper 2:
+              <b>Research paper 2:</b>
               </div>
               <div class="col-10 ">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input " name="researchpaper_2" id="customFile" Required >
-                  <label class="custom-file-label" for="customFile">Choose Second research paper</label>
+                  <input type="file" class="custom-file-input file" name="researchpaper_2" onchange="return fileValidation()"  Required >
+                  <label class="custom-file-label" for="customFile"><?php echo substr($project['research_paper_2'],13);?></label>
+                  <small class="text-muted">Upload the file in PDF format only</small>
                 </div>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col-2 text-dark text-success text-right " id="label_title">
-                Research paper 3:
+              <b>Research paper 3:</b>
               </div>
               <div class="col-10 ">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input " name="researchpaper_3" id="customFile" >
-                  <label class="custom-file-label" for="customFile">Choose Third research paper</label>
+                  <input type="file" class="custom-file-input file" name="researchpaper_3"onchange="return fileValidation()"  >
+                  <label class="custom-file-label" for="customFile"><?php echo substr($project['research_paper_3'],13);?></label>
+                  <small class="text-muted">Upload the file in PDF format only</small>
                 </div>
               </div>
             </div>
