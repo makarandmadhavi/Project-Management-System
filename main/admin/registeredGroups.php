@@ -14,7 +14,7 @@
   <!--<img src="files/images/Rait_new_logo_png.png" class="top_logo">-->
   <div class="chip">
     <img src="../assets/images/img_avatar.png" alt="Person" width="96" height="96">
-    Username
+    Admin
   </div>
   <nav class="navbar navbar-expand-lg primary_color navbar-dark">
     <a class="navbar-brand" href="#"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></a>
