@@ -1,3 +1,4 @@
+<h1 class="text-center mt-4"><b>All Projects</b></h1>
 <div class="container" style="margin-bottom: 40px;">
     <br>
 

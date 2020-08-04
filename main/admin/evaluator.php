@@ -41,7 +41,7 @@
       <br>
       <div class="row">
         <div class="col-sm-9">
-          <h5>Evaluator allocation</h5>
+        <h1 class="text-center "><b>Evaluators Allocation</b></h1>
         </div>
         <div class="col-sm-3">
           <div class="input-group mb-3">

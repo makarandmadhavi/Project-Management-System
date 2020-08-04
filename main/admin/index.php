@@ -30,6 +30,7 @@
   </nav>
 
     <div id="main-content" class="container">
+        <h1 class="text-center mt-4"><b>Evaluator Assignment</b></h1>
         <!-- facultylist table start  -->
         <div class="mt-5 facultylist" id="pagination_data">
 

@@ -1,3 +1,4 @@
+<h1 class="text-center mt-4"><b>All Groups</b></h1>
 <div class="container">
     <br>
     
