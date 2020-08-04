@@ -12,11 +12,13 @@ function assign_evaluator(f,groupname) {
         },
         success: function (data) {
             //data is returned here
-            if(data=='SUCCESS'){
-                alert("Evaluator assigned");
+            if(data=='ERROR'){
+                alert("ERROR");
+                
             }
             else{
-                alert("Error");
+                alert("Evaluator Assigned");
+                $('.eval').html(data);
             }
             $(f).prop("disabled",false);
             

@@ -61,8 +61,11 @@
         <div class="card">
           <div class="card-header d-flex justify-content-between" id="headingOne" type="button" data-toggle="collapse"
             data-target="#<?=$project['groupname']?>" aria-expanded="false" aria-controls="<?=$project['groupname']?>">
-            <span><?=$project['groupname']?> - <?=$project['project_name']?></span>
-            <span>5 evaluators</span>
+            <span ><?=$project['groupname']?> - <?=$project['project_name']?></span>
+            <span class='eval'> <?php $assignedevals = getgroupevaluators($project['groupname']); 
+                          foreach ($assignedevals as $eval) {  ?>
+                    <?=$eval['name']?>
+                          <?php } ?> </span>
           </div>
           <div id="<?=$project['groupname']?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
@@ -77,10 +80,10 @@
                 </div>
                 <div class="col-sm-6">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-primary">Evaluators</li>
+                    <li class="list-group-item list-group-item-primary">Evaluator Assigned</li>
                     <?php $assignedevals = getgroupevaluators($project['groupname']); 
                           foreach ($assignedevals as $eval) {  ?>
-                    <li class="list-group-item"><?=$eval['name']?></li>
+                    <li class="list-group-item eval" ><?=$eval['name']?></li>
                           <?php } ?>
 
                     <div class="input-group">
@@ -93,7 +96,7 @@
                           <?php } ?>
                       </select>
                       <div class="input-group-append">
-                        <button class="btn btn-success" type="button" onclick="assign_evaluator(this,'<?=$project['groupname']?>')">Add</button>
+                        <button class="btn btn-success" type="button" onclick="assign_evaluator(this,'<?=$project['groupname']?>')">Change Evaluator</button>
                       </div>
                     </div>
                   </ul>
