@@ -32,8 +32,11 @@
         $sql = "SELECT name FROM faculty,evalulators WHERE evalulators.groupname='$groupname' AND evalulators.facultyid = faculty.sdrn ";
         $result = $conn->query($sql);
         if($result){     
-            while($row = $result -> fetch_assoc()){
+            if($row = $result -> fetch_assoc()){
             array_push($data,$row);
+            } else {
+                $row['name'] = 'Not Assigned';
+                array_push($data,$row);
             }
         }
     return $data;
