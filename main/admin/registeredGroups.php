@@ -7,7 +7,15 @@
 <link rel="stylesheet" href="css/view_details.css">
 <?php include '../templates/header_end.php'; ?>
 
+
 <?php include 'sidenav.php';?>
+
+
+<script>
+window.onload = function() {
+  changetabforgroups('allgroups', 'groups');
+};
+</script>
 
 <div id="main">
   <a href="http://www.dypatil.edu/mumbai/rait"><img src="../assets/images/Rait_logo.png" class="top_logo"></a>
