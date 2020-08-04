@@ -8,7 +8,7 @@ $status = $_GET['project_status'];
 
 <div class="card">
     <div class="card-header">
-        <h5>Projects List</h5>
+        <h5 id="table_head">Projects List</h5>
     </div>
 
     <div class="card-body">

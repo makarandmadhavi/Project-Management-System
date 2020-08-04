@@ -48,7 +48,7 @@ function accept_group() {
         if (row.find('input[type="checkbox"]').is(':checked')) {
             found = true;
             count = count + 1;
-            members.push(document.getElementById('student_list').rows[this.rowIndex].cells[2]
+            members.push(document.getElementById('student_list').rows[this.rowIndex].cells[3]
                 .innerHTML);
             
         } else {

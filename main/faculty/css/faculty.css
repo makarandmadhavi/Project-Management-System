@@ -77,10 +77,10 @@
 
 
 
-body {
+/* body {
   font-family: "Lato", sans-serif;
   transition: background-color .5s;
-}
+} */
 
 .sidenav {
   height: 100%;
@@ -125,17 +125,12 @@ body {
 }
 
 .openbtn {
-  font-size: 20px;
   cursor: pointer;
-  background-color: #111;
   color: white;
-  padding: 10px 15px;
+  margin-left: 20px;
   border: none;
 }
 
-.openbtn:hover {
-  background-color:#444;
-}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
