@@ -27,9 +27,9 @@
         <li onclick="window.location=''" class="nav-item nav-link" id="home">
           Home
         </li>
-        <li class="nav-item nav-link" onclick="changetab(this.id)" id="">
+        <!-- <li class="nav-item nav-link" onclick="changetab(this.id)" id="">
           Allocation list
-        </li>
+        </li> -->
 
 
       </ul>
@@ -41,33 +41,36 @@
       <br>
       <div class="row">
         <div class="col-sm-9">
-        <h1 class="text-center "><b>Evaluators Allocation</b></h1>
+          <h1 class="text-center "><b>Evaluators Allocation</b></h1>
         </div>
         <div class="col-sm-3">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="search">
+            <input type="text" id="search" oninput="searchproject(this.value)" class="form-control"
+              placeholder="search">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+              <button class="btn btn-outline-secondary" onclick="searchproject(search.value)" type="button"
+                id="button-addon2">Search</button>
             </div>
           </div>
         </div>
       </div>
       <?php include 'backend/get_data.php';
-      $projects = getprojects(); 
+      $projects = getprojects("%"); 
       
       ?>
       <div class="accordion" id="accordionExample">
-      <?php foreach ($projects as $project) { ?>
+        <?php foreach ($projects as $project) { ?>
         <div class="card">
           <div class="card-header d-flex justify-content-between" id="headingOne" type="button" data-toggle="collapse"
             data-target="#<?=$project['groupname']?>" aria-expanded="false" aria-controls="<?=$project['groupname']?>">
-            <span ><?=$project['groupname']?> - <?=$project['project_name']?></span>
-            <span class='eval'> <?php $assignedevals = getgroupevaluators($project['groupname']); 
+            <span><?=$project['groupname']?> - <?=$project['project_name']?></span>
+            <span class='eval<?=$project['groupname']?>'> <?php $assignedevals = getgroupevaluators($project['groupname']); 
                           foreach ($assignedevals as $eval) {  ?>
-                    <?=$eval['name']?>
-                          <?php } ?> </span>
+              <?=$eval['name']?>
+              <?php } ?> </span>
           </div>
-          <div id="<?=$project['groupname']?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div id="<?=$project['groupname']?>" class="collapse" aria-labelledby="headingOne"
+            data-parent="#accordionExample">
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-6">
@@ -83,8 +86,8 @@
                     <li class="list-group-item list-group-item-primary">Evaluator Assigned</li>
                     <?php $assignedevals = getgroupevaluators($project['groupname']); 
                           foreach ($assignedevals as $eval) {  ?>
-                    <li class="list-group-item eval" ><?=$eval['name']?></li>
-                          <?php } ?>
+                    <li class="list-group-item eval<?=$project['groupname']?>"><?=$eval['name']?></li>
+                    <?php } ?>
 
                     <div class="input-group">
                       <select class="custom-select" id="select-<?=$project['groupname']?>">
@@ -93,10 +96,11 @@
                           foreach ($evaluators as $evaluator) {
                         ?>
                         <option value="<?=$evaluator['sdrn']?>"><?=$evaluator['name']?></option>
-                          <?php } ?>
+                        <?php } ?>
                       </select>
                       <div class="input-group-append">
-                        <button class="btn btn-success" type="button" onclick="assign_evaluator(this,'<?=$project['groupname']?>')">Change Evaluator</button>
+                        <button class="btn btn-success" type="button"
+                          onclick="assign_evaluator(this,'<?=$project['groupname']?>')">Change Evaluator</button>
                       </div>
                     </div>
                   </ul>
@@ -108,7 +112,7 @@
 
         </div>
         <?php } ?>
-        
+
 
 
       </div>

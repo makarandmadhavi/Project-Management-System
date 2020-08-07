@@ -18,10 +18,35 @@ function assign_evaluator(f,groupname) {
             }
             else{
                 alert("Evaluator Assigned");
-                $('.eval').html(data);
+                $('.eval'+groupname).html(data);
+                //console.log('.eval'+groupname);
             }
             $(f).prop("disabled",false);
             
+        }
+    });
+}
+
+function searchproject(groupname) {
+    //console.log(groupname);
+    
+    $.ajax({
+        type: "POST",
+        url: "backend/getprojects_ajax.php",
+        data: {
+            //data goes here
+            groupname
+        },
+        success: function (data) {
+            //data is returned here
+            if(data=='ERROR'){
+                alert("ERROR");
+                
+            }
+            else{
+                $("#accordionExample").html(data);
+                
+            }
         }
     });
 }

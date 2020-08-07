@@ -1,9 +1,9 @@
 <?php
     
-    function getprojects(){
+    function getprojects($name){
         include 'conn.php';
         $data = array();
-        $sql = "SELECT * FROM groups,project WHERE groups.groupname=project.groupname";
+        $sql = "SELECT * FROM groups,project WHERE groups.groupname=project.groupname AND (groups.groupname LIKE '%$name%' OR project.project_name LIKE '%$name%')";
         $result = $conn->query($sql);
         if($result){     
             while($row = $result -> fetch_assoc()){
