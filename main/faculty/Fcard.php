@@ -5,13 +5,19 @@
 
 <!DOCTYPE html>
 <html>
+<!--
+<head>
+    <title>Faculty Group Cards</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Fcard.css">
+
+</head>-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <!-- <link rel="stylesheet" href="../assets/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="../admin/css/starter.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="Fcard.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <title>RAIT</title>

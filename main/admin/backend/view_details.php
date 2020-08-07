@@ -30,8 +30,6 @@
             $paper3 = '../../student/uploads/'.$row['groupname']."/".$row['research_paper_3'];
     
 ?>
-
-<!-- View Start -->
     <div class="card-header">
         <h5>Group Details</h5>
     </div>
@@ -138,7 +136,6 @@
             </div>
         </div> 
     </div>
-<!-- View Ends -->
 
     <!-- <script>$('#projects_list').dataTable();</script> -->
     <?php

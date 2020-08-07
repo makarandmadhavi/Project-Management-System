@@ -7,8 +7,8 @@
     $mem1 = $_GET["para1"];
     $mem2 = $_GET["para2"];
     $mem3 = $_GET["para3"];
-    
-    $stmt1 = $conn->prepare("select email, phone, name from student where rollno = ?");
+
+    $stmt1 = $conn->prepare("select email, phone from student where name = ?");
     echo $conn->error;
     $stmt1->bind_param("s",$mem1);
     $stmt1->execute();
@@ -17,12 +17,10 @@
 
     $mem1_email = $row1[0];
     $mem1_phone = $row1[1];
-    $mem1_name = $row1[2];
-    echo $mem1_name;
 
     $stmt1->close();
 
-    $stmt2 = $conn->prepare("select email, phone, name from student where rollno = ?");
+    $stmt2 = $conn->prepare("select email, phone from student where name = ?");
     echo $conn->error;
     $stmt2->bind_param("s",$mem2);
     $stmt2->execute();
@@ -31,11 +29,10 @@
 
     $mem2_email = $row2[0];
     $mem2_phone = $row2[1];
-    $mem2_name = $row2[2];
 
     $stmt2->close();
 
-    $stmt3 = $conn->prepare("select email, phone, name from student where rollno = ?");
+    $stmt3 = $conn->prepare("select email, phone from student where name = ?");
     echo $conn->error;
     $stmt3->bind_param("s",$mem3);
     $stmt3->execute();
@@ -44,7 +41,6 @@
 
     $mem3_email = $row3[0];
     $mem3_phone = $row3[1];
-    $mem3_name = $row3[2];
 
     $stmt3->close();
 
@@ -92,49 +88,49 @@
             <div class="member_names">
                 <div class="form-row" id="member_name">
                     <label>Member-1 : &nbsp; </label>
-                    <label id="member1"><?php echo $mem1_name; ?></label>
-                    <input type="hidden" id="mem1" name="member1" value="<?php echo $mem1_name; ?>">
+                    <label id="member1"></label>
+                    <input type="hidden" id="mem1" name="member1" value="<?php echo $mem1 ?>">
                 </div>
                 <div class="form-row" id="member_name">
                     <label>Member-2 : &nbsp; </label>
-                    <label id="member2"><?php echo $mem2_name; ?></label>
-                    <input type="hidden" id="mem2" name="member2" value="<?php echo $mem2_name; ?>">
+                    <label id="member2"></label>
+                    <input type="hidden" id="mem2" name="member2" value="<?php echo $mem2 ?>">
                 </div>
                 <div class="form-row" id="member_name">
                     <label>Member-3 : &nbsp; </label>
-                    <label id="member3"><?php echo $mem3_name; ?></label>
-                    <input type="hidden" id="mem3" name="member3" value="<?php echo $mem3_name; ?>">
+                    <label id="member3"></label>
+                    <input type="hidden" id="mem3" name="member3" value="<?php echo $mem3 ?>">
                 </div>
             </div>
             <br>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <label for="inputEmail4"><?php echo $mem1_name ?>'s Email</label>
+                <label for="inputEmail4"><?php echo $mem1 ?>'s Email</label>
                 <input type="email" class="form-control" id="mem1_email" name="mem1_email" value="<?php echo $mem1_email ?>">
                 </div>
                 <div class="form-group col-md-6">
-                <label for="phone"><?php echo $mem1_name ?>'s Contact</label>
+                <label for="phone"><?php echo $mem1 ?>'s Contact</label>
                 <input type="text" class="form-control" name="mem1_phone" id="mem1_phone" value="<?php echo $mem1_phone ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <label for="inputEmail4"><?php echo $mem2_name ?>'s Email</label>
+                <label for="inputEmail4"><?php echo $mem2 ?>'s Email</label>
                 <input type="email" class="form-control" id="mem2_email" name="mem2_email" value="<?php echo $mem2_email ?>">
                 </div>
                 <div class="form-group col-md-6">
-                <label for="phone"><?php echo $mem2_name ?>'s Contact</label>
+                <label for="phone"><?php echo $mem2 ?>'s Contact</label>
                 <input type="text" class="form-control" name="mem2_phone" id="mem2_phone" value="<?php echo $mem2_phone ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <label for="inputEmail4"><?php echo $mem3_name ?>'s Email</label>
+                <label for="inputEmail4"><?php echo $mem3 ?>'s Email</label>
                 <input type="email" class="form-control" id="mem3_email" name="mem3_email" value="<?php echo $mem3_email ?>">
                 </div>
                 <div class="form-group col-md-6">
-                <label for="phone"><?php echo $mem3_name ?>'s Contact</label>
+                <label for="phone"><?php echo $mem3 ?>'s Contact</label>
                 <input type="text" class="form-control" name="mem3_phone" id="mem3_phone" value="<?php echo $mem3_phone ?>">
                 </div>
             </div>

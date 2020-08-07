@@ -40,7 +40,6 @@
     
     $values = array_count_values($shift);
     arsort($values);
-    
     $popular = array_slice(array_keys($values), 0, 2, true);
  
     
@@ -56,7 +55,6 @@
     // $last_id = substr($last_grpid, 2, strlen($last_grpid) - 2);
     // $id = (int)$last_id + 1;
 
-    $groupId = "";
     if($popular[0] == '1'){
         $groupId = "f"."_".$id;
     }elseif ($popular[0] == '0') {
@@ -69,15 +67,13 @@
     values(?, ?, ?, ?)");
     $stmt->bind_param("ssss",$member1, $member2, $member3, $groupId);
     $stmt->execute();
-    echo $stmt->error;
     $stmt->close();
-    
+
     //update students table
     $stmt = $conn->prepare("UPDATE student SET isGrouped = 1 WHERE name in (?, ?, ?)");
     $stmt->bind_param("sss",$member1, $member2, $member3);
     $stmt->execute();
     $stmt->close();
-
 
     //insert group login details into login table
     $login_type = 'student';
@@ -85,7 +81,6 @@
     values(?, ?, ?)");
     $stmt->bind_param("sss",$groupId, $key, $login_type);
     $stmt->execute();
-    echo $stmt->error;
     $stmt->close();
 
 
@@ -125,10 +120,10 @@
     //     }
     //     else
     // {
-    //     ?
-     //     <script> -->
-     //         alert(nl2br("Registered Successfully !")); -->
-     //     </script> -->
-    //     <?ph
+    //     ?>
+    //     <script>
+    //         alert(nl2br("Registered Successfully !"));
+    //     </script>
+    //     <?php
     // } 
 ?>
