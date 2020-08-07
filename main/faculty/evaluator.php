@@ -35,32 +35,40 @@
   <div>
   <div class="container mt-4">
       <div class="row">
-        <!-- card start  -->
-        <div class="card-wrapper col-lg-4 col-md-6 col-xs-12">
-          <div class="card">
-            <div class="card-img-wrapper">
-              <img class="card-img-top" src="../assets/images/group_avatar.png" alt="Card image cap">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Group ID 1<p>Domain Name:Deep Learning</p></h5>
-              <div class="card-content">
-                <p class="card-text">Project Name:<p>Group member 1:</p><p>Group member 2:</p><p>Group member 3:</p></p>
-                <a href="#" class="btn btn-primary">Check Status</a>
-              </div>
-            </div>
-          </div>
-        </div>
-       <!-- card end   -->
        <?php
         include 'backend/get_evaluator_data.php';
         $groups=array();
         $groups= (getgroups($userLoggedIn));
         foreach($groups as $groupname){
-          $data=($groupname);
-          print_r($data);
-          echo "<br>";
+          $project=array();
+          $project=(getprojects($groupname));
+          $id=$project['id'];
+          ?>
 
-          
+           <!-- card start  -->
+        <a href="abstractpage.php?id=<?php echo $project['groupname'];?>">
+          <div class="card-wrapper col-lg-4 col-md-6 col-xs-12">
+            <div class="card">
+              <div class="card-img-wrapper">
+                <img class="card-img-top" src="../assets/images/group_avatar.png" alt="Card image cap">
+              </div>
+              <div class="card-body">
+                <div class="card-title">
+                  <p class="card-text"><b>Group Name: </b><?php echo $project['groupname']?></p>
+                  <p class="card-text"><b>Project Name: </b><?php echo $project['project_name']?></p>
+                  <p class="card-text"><b>Project Domain: </b><?php echo $project['domain']?></p>
+                </div>
+                <div class="card-content">
+                  <a href="#" class="btn btn-primary">Check Status</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+         <!-- card end   -->
+         
+          <?php
+
         }
         
       ?>

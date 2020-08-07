@@ -16,14 +16,23 @@
     function getprojects($groupname){
         include 'conn.php';
         $data = array();
-        $sql = "SELECT * FROM project  WHERE groupname = $groupname";
+        $sql = "SELECT * FROM `project`  WHERE `groupname` ='$groupname'";
         $result = $conn->query($sql);
         if($result){     
-            while($row = $result -> fetch_assoc()){
-            array_push($data,$row);
-            }
+            return $result->fetch_assoc();
         }
-    return $data;
+        return $data;
+    }
+
+    function getstudentnames($groupname){
+        include 'conn.php';
+        $data = array();
+        $sql = "SELECT * FROM `groups`  WHERE `groupname` ='$groupname'";
+        $result = $conn->query($sql);
+        if($result){     
+            return $result->fetch_assoc();
+        }
+        return $data;
     }
 
     
