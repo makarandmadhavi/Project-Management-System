@@ -58,11 +58,7 @@
   
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<script>
 
-
-
-</script>
 <script src="../assets/jquery.dataTables.min.js"></script>
 <script src="js/addEvaluator.js"></script>
 </body>

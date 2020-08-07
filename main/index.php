@@ -1,4 +1,5 @@
 <?php 
+
 session_start();
 if(isset($_SESSION['logintype'])){
     print($_SESSION['logintype']);
