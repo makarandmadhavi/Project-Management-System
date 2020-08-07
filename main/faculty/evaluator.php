@@ -57,9 +57,10 @@
                   <p class="card-text"><b>Group Name: </b><?php echo $project['groupname']?></p>
                   <p class="card-text"><b>Project Name: </b><?php echo $project['project_name']?></p>
                   <p class="card-text"><b>Project Domain: </b><?php echo $project['domain']?></p>
+                  <p class="card-text"><b>Project Status: </b><?php echo $project['status']?></p>
                 </div>
                 <div class="card-content">
-                  <a href="#" class="btn btn-primary">Check Status</a>
+                  <a href="abstractpage.php?id=<?php echo $project['groupname'];?>" class="btn btn-primary">Check Status</a>
                 </div>
               </div>
             </div>

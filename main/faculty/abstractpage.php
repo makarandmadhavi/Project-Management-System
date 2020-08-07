@@ -17,6 +17,7 @@
 <?php include '../templates/header_end.php'; ?>
 <?php include 'sidenav.php';?> 
 
+</div>
   <div id="main">
     <a href="http://www.dypatil.edu/mumbai/rait"><img src="../assets/images/Rait_new_logo_png.png" class="top_logo"></a>
     <div class="chip">
@@ -144,7 +145,61 @@
         </div>
     </div>
     <br>
-    
+    <div class="card-header">
+        <h5>Feedback</h5>
+    </div> 
+    <div class="container grp_details my-3">
+        <form id="myForm">
+            <div class="row">
+                <div class="col-3">
+                    <h6 id="row_data1">Comment : </h6>
+                </div>
+                <div class="form-group col-9">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment"rows="3" required></textarea>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-3">
+                <h6 id="row_data1">Status : </h6>
+                </div>
+                <div class="col-3">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline1" name="status" class="custom-control-input" value="Accept"checked>
+                        <label class="custom-control-label" for="customRadioInline1">Accept</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="status" class="custom-control-input" value="Incomplete">
+                        <label class="custom-control-label" for="customRadioInline2">Incomplete</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline3" name="status" class="custom-control-input" value="Rejected">
+                        <label class="custom-control-label" for="customRadioInline3">Reject</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button"  class="btn btn-primary  mx-auto my-4 submit" value="<?php echo $groupname?>" onclick="submitabstract(this.value)">Submit</button>
+            </div>
+            <!-- alert start  -->
+            <div class="alert alert-success alert-dismissible fade my-4">
+                <b>You have Sucessfully Submitted the feedback .<a href="evaluator.php" class="alert-link"> <u>You may want to the previous page for further evaluation.</u></a></b>
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+            <!-- alert end  -->
+        </form>
+        
+  
+
+
+
+
+
+
+    </div>
   
     </div>
     </div>
@@ -156,4 +211,5 @@
   
 </div>
 <script src="js/index.js"></script>
+<script src="js/abstractpage.js"></script>
 <?php include '../templates/footer.php'; ?>
