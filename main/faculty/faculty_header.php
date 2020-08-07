@@ -6,9 +6,9 @@ session_start();
 
 if (isset($_SESSION["username"])) {
 	$userLoggedIn = $_SESSION['username'];
-	$user_details_query = $conn->query("SELECT * FROM  faculty WHERE sdrn='$userLoggedIn'");
+	$user_details_query = $conn->query("SELECT * FROM faculty WHERE sdrn='$userLoggedIn'");
 	$user = $user_details_query->fetch_assoc();
-	$login_details_query = $conn->query("SELECT * FROM  `login` WHERE username='".$user['sdrn']."' ");
+	$login_details_query = $conn->query("SELECT * FROM `login` WHERE username='".$user['sdrn']."' ");
     $login = $login_details_query->fetch_assoc();
 }
 	/*$member_details_query = $conn->query("SELECT `member1`, `member2`, `member3` FROM `faculty` WHERE sdrn='".$user['sdrn']."' ");
