@@ -51,7 +51,20 @@
           </div>
         </div>
        <!-- card end   -->
+       <?php
+        include 'backend/get_evaluator_data.php';
+        $groups=array();
+        $groups= (getgroups($userLoggedIn));
+        foreach($groups as $groupname){
+          $data=($groupname);
+          print_r($data);
+          echo "<br>";
+
           
+        }
+        
+      ?>
+       
           
       </div>
     </div>

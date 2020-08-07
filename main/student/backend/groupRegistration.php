@@ -37,29 +37,24 @@
         array_push($shift,$row["shift"]);
     endwhile;
     $stmt1->close();
-    
-    $values = array_count_values($shift);
-    arsort($values);
-    $popular = array_slice(array_keys($values), 0, 2, true);
- 
-    
+    $popular = array_count_values($shift);  
     $sql="SELECT * FROM groups";
     $result=mysqli_query($conn,$sql);
     $rowcount=mysqli_num_rows($result)+1;
     $id = (string)$rowcount;
-
     // $sql = "SELECT group_username FROM groups ORDER BY group_username DESC LIMIT 1";
     // $result=mysqli_query($conn,$sql);
     // $row = $result->fetch_row();
     // $last_grpid = $row[0];
     // $last_id = substr($last_grpid, 2, strlen($last_grpid) - 2);
     // $id = (int)$last_id + 1;
-
-    if($popular[0] == '1'){
+    $groupId="";
+    if($popular[1] > $popular[2]){
         $groupId = "f"."_".$id;
-    }elseif ($popular[0] == '0') {
+    }else {
         $groupId = "s"."_".$id;
     }
+
     //group_id ends
 
     //insert group details into group table
