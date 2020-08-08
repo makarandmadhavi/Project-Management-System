@@ -105,7 +105,7 @@
         </button>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
-            <div class="row">
+            <div class="row px-3">
                         <h6 id="row_data1"><span id="data_span"><?=$row['abstract']?></span></h6>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                 <div class="container grp_details">
                     <div class="row">
                         <div class="col-3">
-                        <h6 id="row_data1">No Remarks Yet.</h6>
+                        <h6 id="row_data1"><?=$row['comment']?></h6>
                     </div>
                 </div>    
             </div>
