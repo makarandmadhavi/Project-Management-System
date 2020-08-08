@@ -8,7 +8,8 @@ if (!isset($_SESSION["username"]) && ($_SESSION["logintype"]!="faculty")) {
     header("Location: ../index.php");
 }
 else{
-	$userLoggedIn = $_SESSION['username'];
+    $userLoggedIn = $_SESSION['username'];
+    
 }
 
 

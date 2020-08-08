@@ -35,6 +35,17 @@
         return $data;
     }
 
+    function getfacultydetails($sdrn){
+        include 'conn.php';
+        $data = array();
+        $sql = "SELECT * FROM `faculty` WHERE `sdrn`=$sdrn";
+        $result = $conn->query($sql);
+        if($result){     
+            return $result->fetch_assoc();
+        }
+        return $data;
+    }
+
     
 
 

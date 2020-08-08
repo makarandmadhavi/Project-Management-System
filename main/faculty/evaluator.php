@@ -1,6 +1,8 @@
 <?php
   include 'backend/conn.php';
   include 'faculty_header.php';
+  include 'backend/get_evaluator_data.php';
+  $faculty=getfacultydetails($userLoggedIn);
 ?>
 
 <?php include '../templates/header_start.php'; ?>
@@ -13,7 +15,7 @@
   <!--<img src="./Rait_new_logo_png.png" class="top_logo">-->
     <div class="chip">
       <img src="../assets/images/img_avatar.png" alt="Person" width="96" height="96">
-      <?php echo $userLoggedIn;?>
+      <?php  echo $faculty['name'];?>
     </div>
     <nav class="navbar navbar-expand-lg primary_color navbar-dark">
       <a class="navbar-brand" href="#"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></a>
@@ -36,7 +38,7 @@
   <div class="container mt-4">
       <div class="row">
        <?php
-        include 'backend/get_evaluator_data.php';
+        
         $groups=array();
         $groups= (getgroups($userLoggedIn));
         foreach($groups as $groupname){
