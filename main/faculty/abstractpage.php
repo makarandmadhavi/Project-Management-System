@@ -34,12 +34,8 @@
       <span class="navbar-toggler-icon"></span>
       </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <a href="backend/logout.php" class='mx-4'><button type="button" class="btn btn-success">Logout</button></a>
     </div>
   </nav>
 
