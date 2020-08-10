@@ -63,7 +63,7 @@
         <div class="card">
           <div class="card-header d-flex justify-content-between" id="headingOne" type="button" data-toggle="collapse"
             data-target="#<?=$project['groupname']?>" aria-expanded="false" aria-controls="<?=$project['groupname']?>">
-            <span><?=$project['groupname']?> - <?=$project['project_name']?></span>
+            <span><?=$project['groupname']?> - <?=$project['project_name']?> --><?=$project['domain']?> </span>
             <span class='eval<?=$project['groupname']?>'> <?php $assignedevals = getgroupevaluators($project['groupname']); 
                           foreach ($assignedevals as $eval) {  ?>
               <?=$eval['name']?>
@@ -95,7 +95,7 @@
                           $evaluators = getevaluators();
                           foreach ($evaluators as $evaluator) {
                         ?>
-                        <option value="<?=$evaluator['sdrn']?>"><?=$evaluator['name']?></option>
+                        <option value="<?=$evaluator['sdrn']?>"><?=$evaluator['name']?> --><?=$evaluator['domain']?></option>
                         <?php } ?>
                       </select>
                       <div class="input-group-append">
