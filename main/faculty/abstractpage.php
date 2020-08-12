@@ -3,7 +3,7 @@
 <?php
   include 'backend/conn.php';
   include 'faculty_header.php';
-  include 'backend/get_evaluator_data.php';
+  include 'backend/get_data.php';
   $faculty=getfacultydetails($userLoggedIn);
   $groupname=$_GET['id'];
   $row=getprojects($groupname);

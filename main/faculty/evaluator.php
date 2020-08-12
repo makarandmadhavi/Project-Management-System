@@ -1,7 +1,7 @@
 <?php
   include 'backend/conn.php';
   include 'faculty_header.php';
-  include 'backend/get_evaluator_data.php';
+  include 'backend/get_data.php';
   $faculty=getfacultydetails($userLoggedIn);
 ?>
 
@@ -34,7 +34,7 @@
        <?php
         
         $groups=array();
-        $groups= (getgroups($userLoggedIn));
+        $groups= (getEvaluatorgroups($userLoggedIn));
         foreach($groups as $groupname){
           $project=array();
           $project=(getprojects($groupname));

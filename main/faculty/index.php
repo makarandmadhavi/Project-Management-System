@@ -1,8 +1,9 @@
 <?php
   include 'backend/conn.php';
   include 'faculty_header.php';
-  include 'backend/get_evaluator_data.php';
+  include 'backend/get_data.php';
   $faculty=getfacultydetails($userLoggedIn);
+  $status = array(0=>"Project Supervisor", 1=>"Evaluator and Project Supervisor");
 ?>
 
 <?php include '../templates/header_start.php'; ?>
@@ -27,8 +28,56 @@
         <a href="backend/logout.php" class='mx-4'><button type="button" class="btn btn-success">Logout</button></a>
     </div>
   </nav>
-  <div>
-    <br>
+  
+  <div class="main container my-3">
+    <table class="table table-hover">
+        
+        <tbody>
+ 
+            <tr>
+                <td >Name</td>
+                <td ><b><?php echo $faculty['name'];?></b></td>
+                
+            </tr>
+            <tr>
+                <td >Department</td>
+                <td ><b><?php echo $faculty['dept_name'];?></b></td>
+                
+            </tr>
+            <tr>
+                <td >Email</td>
+                <td ><b><?php echo $faculty['emailid'];?></b></td>
+                
+            </tr>
+            <tr>
+                <td >Domain</td>
+                <td ><b><?php echo $faculty['domain'];?></b></td>
+                
+            </tr>
+            <tr>
+                <td >Role</td>
+                <td ><b><?php echo $status[$faculty['isEvaluator']]?></b></td>
+                
+            </tr>
+            <tr>
+                <td >Evaluator Page</td>
+                <td ><a href="evaluator.php" class="btn btn-primary">Evaluator</a></td>
+                
+            </tr>
+            <tr>
+                <td >Project Supervisor Page</td>
+                <td ><a href="mentor.php" class="btn btn-primary">Project Supervisor</a></td>
+            </tr>
+            
+            
+            
+
+            
+                       
+        </tbody>
+    </table>
+  
+    </div><br>
     <br>
     <br>
     <br>

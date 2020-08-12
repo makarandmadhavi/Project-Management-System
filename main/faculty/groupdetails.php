@@ -3,7 +3,7 @@
 <?php
   include 'backend/conn.php';
   include 'faculty_header.php';
-  include 'backend/get_evaluator_data.php';
+  include 'backend/get_data.php';
   $faculty=getfacultydetails($userLoggedIn);
   $groupname=$_GET['id'];
   $row=getprojects($groupname);
@@ -117,7 +117,7 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
             <div class="row">
-                        <h6 id="row_data1"><span id="data_span"><?=$row['abstract']?></span></h6>
+                        <h6 id="row_data1" class="px-3"><span id="data_span"><?=$row['abstract']?></span></h6>
                     </div>
                 </div>
             </div>
