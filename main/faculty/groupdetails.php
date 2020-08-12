@@ -179,58 +179,6 @@
             </div>
         </div>
 
-        <div class="card">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            <div class="card-header" id="headingFour">
-                <center>
-                    <h5>Feedback </h5>
-                </center>
-            </div>
-        </button>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-            <div class="card-body">
-            <div class="container grp_details my-3">
-            <form id="myForm">
-            <div class="row">
-                <div class="col-3">
-                    <h6 id="row_data1">Comment : </h6>
-                </div>
-                <div class="form-group col-9">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment"rows="3" required></textarea>
-                </div> 
-            </div>
-            <div class="row">
-                <div class="col-3">
-                <h6 id="row_data1">Status : </h6>
-                </div>
-                <div class="col-3">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline1" name="status" class="custom-control-input" value="approved"checked>
-                        <label class="custom-control-label" for="customRadioInline1">Accept</label>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline2" name="status" class="custom-control-input" value="Incomplete">
-                        <label class="custom-control-label" for="customRadioInline2">Incomplete</label>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline3" name="status" class="custom-control-input" value="rejected">
-                        <label class="custom-control-label" for="customRadioInline3">Reject</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <button type="button"  class="btn btn-primary  mx-auto my-4 submit" value="<?php echo $groupname?>" onclick="submitabstract(this.value)">Submit</button>
-            </div>
-            <!-- alert start  -->
-            <div class="alert alert-success alert-dismissible fade my-4">
-                <b>You have Sucessfully Submitted the feedback .<a href="evaluator.php" class="alert-link"> <u>You may want to the previous page for further evaluation.</u></a></b>
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-            </div>
-            <!-- alert end  -->
         </form>
                     </div>
                 </div>
