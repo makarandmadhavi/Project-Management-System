@@ -17,7 +17,7 @@ function assign_mentor(f,groupname) {
                 
             }
             else{
-                alert("Evaluator Assigned");
+                alert("Project Supervisor Assigned");
                 $('.eval'+groupname).html(data);
                 //console.log('.eval'+groupname);
             }
