@@ -205,7 +205,7 @@
                 </div>
                 <div class="col-3">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline1" name="status" class="custom-control-input" value="Accept"checked>
+                        <input type="radio" id="customRadioInline1" name="status" class="custom-control-input" value="approved"checked>
                         <label class="custom-control-label" for="customRadioInline1">Accept</label>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                 </div>
                 <div class="col-3">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline3" name="status" class="custom-control-input" value="Rejected">
+                        <input type="radio" id="customRadioInline3" name="status" class="custom-control-input" value="rejected">
                         <label class="custom-control-label" for="customRadioInline3">Reject</label>
                     </div>
                 </div>
