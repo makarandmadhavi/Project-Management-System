@@ -22,7 +22,7 @@
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="index.php"><i class="fas fa-qrcode"></i>Dashboard</a>
-    <a href="abstract.php"><i class="fa fa-graduation-cap" aria-hidden="true" >Create Abstract</i></a>
+    <a href="abstract.php"><i class="fa fa-graduation-cap" aria-hidden="true" >Submit Abstract</i></a>
     <a href="update_abstract.php"><i class="fa fa-graduation-cap" aria-hidden="true" >Update Abstract</i></a>
     
     <a href="backend/logout.php">Log out</a>
@@ -77,7 +77,7 @@
                     <form  action="backend/changepassword_backend.php" class= "changepassowrdform" method="POST">
                       <div class="form-group row">
                         <label for="new_password" class="change_password_text">Password</label>
-                        <input type="password" name="new_password" id="new_password"" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" Required >
+                        <input type="password" name="new_password" id="new_password" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" Required >
                         <label for="confirm_password" class="change_password_text">Password</label>
                         <input type="password" name="confirm_password"   id="confirm_password" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" Required >
                         <small class="text-muted mx-4 mt-2"> At least 8 characters long. - At least 1 uppercase, AND at least 1 lowercase - At least 1 digit AND at least 1 alphanumeric.</small>
@@ -163,6 +163,24 @@
                 ?></b></td>
                 
             </tr>
+            <tr>
+                <td>Evaluator Allocated:</td>
+                <td><b><?php
+                $evaluator_query = $conn->query("SELECT * FROM evalulators WHERE groupname='".$userLoggedIn."'");
+                if($evaluator_query->num_rows > 0)
+                {
+                  $cur_grp = $evaluator_query->fetch_assoc();
+                  $eva_sdrn = $cur_grp['facultyid'];
+                  $evaluator_name = $conn->query("SELECT * FROM faculty WHERE sdrn='".$eva_sdrn."'");
+                  $eva_details = $evaluator_name->fetch_assoc();
+                  echo $eva_details['name'];
+                }else {
+                  echo "No";
+                }
+
+                ?></b></td>
+            </tr>
+
             <tr>
                 <td>Project Supervisor Allocated:</td>
                 <td><b><?php  
