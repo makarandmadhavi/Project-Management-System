@@ -55,7 +55,7 @@
     }else {
         $groupId = "s"."_".$id;
     }
-    echo $groupId;
+    //echo $groupId;
     //group_id ends
 
     //insert group details into group table
