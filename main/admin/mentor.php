@@ -41,7 +41,7 @@
       <br>
       <div class="row">
         <div class="col-sm-9">
-          <h1 class="text-center "><b>Mentor Allocation</b></h1>
+          <h1 class="text-center "><b>Project Supervisor Allocation</b></h1>
         </div>
         <div class="col-sm-3">
           <div class="input-group mb-3">
@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-sm-6">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-primary">Mentor Assigned</li>
+                    <li class="list-group-item list-group-item-primary">Project Supervisor Assigned</li>
                     <?php $assignedevals = getgroupmentors($project['groupname']); 
                           foreach ($assignedevals as $eval) {  ?>
                     <li class="list-group-item eval<?=$project['groupname']?>"><?=$eval['name']?></li>
@@ -100,7 +100,7 @@
                       </select>
                       <div class="input-group-append">
                         <button class="btn btn-success" type="button"
-                          onclick="assign_mentor(this,'<?=$project['groupname']?>')">Change Evaluator</button>
+                          onclick="assign_mentor(this,'<?=$project['groupname']?>')">Change Project Supervisor</button>
                       </div>
                     </div>
                   </ul>

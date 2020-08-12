@@ -6,6 +6,6 @@
   <a href="registeredGroups.php"><i class="fa fa-address-book" aria-hidden="true"></i>Registered Group</a>
   <a href="#"><i class="fa fa-users" aria-hidden="true"></i>Group Allocation</a>
   <a href="evaluator.php"><i class="far fa-question-circle"></i>Evaluator Allocation</a>
-  <a href="mentor.php"><i class="fas fa-sliders-h"></i>Mentor Allocation</a>
+  <a href="mentor.php"><i class="fas fa-sliders-h"></i>Project Supervisor Allocation</a>
   <a href="logout.php">Log out</a>
 </div>
