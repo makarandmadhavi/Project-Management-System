@@ -59,11 +59,17 @@
                 <td ><b><?php echo $status[$faculty['isEvaluator']]?></b></td>
                 
             </tr>
-            <tr>
+            <?php if(isEvaluator($userLoggedIn)){
+              ?>
+              <tr>
                 <td >Evaluator Page</td>
                 <td ><a href="evaluator.php" class="btn btn-primary">Evaluator</a></td>
                 
             </tr>
+              <?php
+            }
+            ?>
+            
             <tr>
                 <td >Project Supervisor Page</td>
                 <td ><a href="mentor.php" class="btn btn-primary">Project Supervisor</a></td>

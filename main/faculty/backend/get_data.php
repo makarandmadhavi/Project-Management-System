@@ -1,4 +1,15 @@
 <?php
+
+    function isEvaluator($sdrn){
+        include 'conn.php';
+        $evaluator_query=$conn->query("SELECT id FROM  evalulators WHERE facultyid=$sdrn"); 
+        $evaluator = $evaluator_query->fetch_assoc();
+        if($evaluator){     
+           return true;
+        }
+    return false;
+    }
+
     
     function getgroups($sdrn){
         include 'conn.php';
