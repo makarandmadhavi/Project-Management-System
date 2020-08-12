@@ -86,7 +86,7 @@ if(isset($_SESSION['logintype'])){
                 <center>
                 <select name="Branch" class="custom-select mb-3 filter" id="branch">
                     <option selected>Select Branch</option>
-                    <option value="Computer">Computer Science</option>
+                    <option value="COMPUTER SCIENCE">Computer Science</option>
                     <option value="IT">Information Technology</option>
                     <option value="EXTC">EXTC</option>
                     <option value="ETRX">Electronics</option>
