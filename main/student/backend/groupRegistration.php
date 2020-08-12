@@ -32,7 +32,8 @@
     $stmt1->bind_param("sss",$member1,$member2,$member3);
     $stmt1->execute();
     $result1 = $stmt1->get_result();
-    $shift=array();
+    $shift=array(1,2);
+
     while($row = $result1->fetch_assoc()):
         array_push($shift,$row["shift"]);
     endwhile;
@@ -54,7 +55,7 @@
     }else {
         $groupId = "s"."_".$id;
     }
-
+    echo $groupId;
     //group_id ends
 
     //insert group details into group table
