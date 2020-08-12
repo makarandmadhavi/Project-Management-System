@@ -10,8 +10,13 @@
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         echo $row['name'];
+        $name = $row['name'];
+        $sql = "UPDATE project set mentor='$name' WHERE groupname='$groupname'";
+        $result = $conn->query($sql);
     }
     else {
         echo 'ERROR';
     }
+    $sql = "UPDATE project set mentor";
+    $result = $conn->query($sql);
 ?>
