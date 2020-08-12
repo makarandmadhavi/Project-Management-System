@@ -37,7 +37,7 @@ if(isset($_SESSION['logintype'])){
 <body>
 
     <div class="jumbotron ">
-        <div class="row ">
+        <div class="row">
             <div class="col-sm-6">
                 <div class="logodiv">
                     <img id="logo" src="assets/images/rait.png" alt="logo">

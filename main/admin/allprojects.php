@@ -1,4 +1,5 @@
-<h1 class="text-center mt-4"><b>All Projects</b></h1>
+<!-- <h1 class="text-center mt-4 head_text"><b>All Projects</b></h1> -->
+<h1 class="text-center mt-4" id="head_text">Projects</h1>
 <div class="container" style="margin-bottom: 40px;">
     <br>
 
@@ -36,7 +37,7 @@ $status = $_GET['project_status'];
 
 </div>
 
-<script src="js/projects.js"></script>
+<script src="js/projects.js">var back = 0;</script>
 <script>
     display_projects('<?php echo $status; ?>');
 </script>

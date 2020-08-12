@@ -58,6 +58,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="../assets/bootstrap.min.css">
   <link rel="stylesheet" href="css/starter.css">
   <link rel="stylesheet" href="css/groupRegistration.css">
@@ -76,7 +78,8 @@
     </div>
     </div>
     <nav class="navbar navbar-expand-lg primary_color navbar-dark">
-    <a class="navbar-brand" href="#">Group Details</a>
+    <a class="navbar-brand" href="../index.php"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+    <a class="navbar-brand active" href="#">Group Details</a>
     </nav>
     <!--Head and Navbar Ends-->
 

@@ -31,7 +31,7 @@
 
 </div>
 
-<script src="js/allgroups.js"></script>
+<script src="js/allgroups.js">var back = 0;</script>
 <script>
     display_allgroups();
 </script>

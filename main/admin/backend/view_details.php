@@ -191,7 +191,7 @@
 
 
 
-    <!-- <script>$('#projects_list').dataTable();</script> -->
+    <script>var back = 1;</script>
     <?php
         } else {
             echo 'Error';

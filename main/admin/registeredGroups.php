@@ -33,6 +33,7 @@ window.onload = function() {
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
+      <li class="nav-item nav-link" onclick="(back == 1) ? changetabforgroups('allprojects', 'all') : changetabforgroups(this.id, 'groups')" id="allgroups"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></li>
         <li class="nav-item nav-link" onclick="changetabforgroups(this.id, 'groups')" id="allgroups">
           All Groups
         </li>

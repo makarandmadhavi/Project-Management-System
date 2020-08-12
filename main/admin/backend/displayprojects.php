@@ -27,7 +27,11 @@
     <td><?=$row['mentor']?></td>
     <td><button onclick="view_projectDetails(<?=$row['id']?>)" class="btn btn-sm btn-primary">View Details</button></td>
 </tr>
-
+<script>
+    // alert(document.getElementById('head_text').innerHTML);
+    var stat = "<?=$status?>";
+    document.getElementById('head_text').innerHTML = stat[0].toUpperCase() + stat.slice(1) + " Projects";
+</script>
 <?php
         }
     ?>
