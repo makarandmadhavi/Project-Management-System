@@ -185,7 +185,7 @@
               </div>
               <div class="col-10 ">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input file" name="researchpaper_3"onchange="return fileValidation()"  >
+                  <input type="file" class="custom-file-input file" name="researchpaper_3" onchange="return fileValidation()"  >
                   <label class="custom-file-label" for="customFile"><?php echo substr($project['research_paper_3'],13);?></label>
                   <small class="text-muted">Upload the file in PDF format only</small>
                 </div>

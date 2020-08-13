@@ -157,9 +157,12 @@
                         <div class="col-2">
                             <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper2?>" target="_blank">View Paper 2</a>
                         </div>
-                        <div class="col-2">
-                            <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper3?>" target="_blank">View Paper 3</a>
-                        </div>
+                        <?php if($row['research_paper_3']!=""){
+                            ?>
+                            <div class="col-3">
+                                <a class="btn btn-primary" href="backend/view_pdf.php?address=<?=$paper3?>" target="_blank">View Paper 3</a>
+                            </div>
+                    <?php }?>
                     </div>
                 </div>
         <br>

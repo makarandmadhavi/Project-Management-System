@@ -115,9 +115,9 @@
             </div>
         </button>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
+            <div class="card-body px-3">
             <div class="row">
-                        <h6 id="row_data1"><span id="data_span"><?=$row['abstract']?></span></h6>
+                        <h6 id="row_data1 " class="px-3"><span id="data_span"><?=$row['abstract']?></span></h6>
                     </div>
                 </div>
             </div>

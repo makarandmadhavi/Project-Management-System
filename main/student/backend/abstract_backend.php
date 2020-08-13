@@ -165,7 +165,9 @@ if (isset($_POST['update_submit'])) {
   $size3 = $_FILES['researchpaper_2']['size'];
 
   //research paper3
-  $unique4=uniqid();
+  echo $_FILES['researchpaper_3']['name']; 
+  if( $_FILES['researchpaper_3']['name']!=""){
+    $unique4=uniqid();
   $filename4 = $_FILES['researchpaper_3']['name'];
   $filename4 = explode(" ",$filename4);
   $filename4 = join("_",$filename4);
@@ -196,6 +198,30 @@ if (isset($_POST['update_submit'])) {
           echo "$conn->error";
         }
       }
+    
+
+  }
+  else{
+    $status = "pending";
+    //mkdir("../uploads/".$user);
+        // move the uploaded (temporary) file to the specified destination
+        if (move_uploaded_file($file1, $destination1) && move_uploaded_file($file2, $destination2) && move_uploaded_file($file3, $destination3))
+        {
+          $sql = "UPDATE `project` SET `project_name`='$title',`domain`='$domain',`abstract`='$abstract',`ppt`='$unique1$filename1',`research_paper_1`='$unique2$filename2',`research_paper_2`= '$unique3$filename3' ,`research_paper_3`=''  WHERE `groupname`='$user'";
+            if ($conn->query($sql)) 
+            {
+                
+                header("Location: ../index.php");        
+            }
+         else
+          {?><script></script>
+          <?php
+            echo "$conn->error";
+          }
+        }
+
+  }
+  
 
 
 

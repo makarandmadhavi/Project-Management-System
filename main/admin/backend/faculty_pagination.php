@@ -9,7 +9,7 @@
 
                   <th>SDRN</th>
                   <th> Name</th>
-                  <th> Emaik</th>
+                  <th> Email</th>
                   <th> Domain</th>
                   
 
