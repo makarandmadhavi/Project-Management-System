@@ -180,6 +180,25 @@
 
                 ?></b></td>
             </tr>
+            <tr>
+                <td>Evaluator Feedback</td>
+                <td><b><?php  if(!$flag)
+                {
+                  echo "Not Evaluated";
+                }
+                else{
+                  if($project['comment']!=""){
+                    echo ($project['comment']);
+
+                  }
+                  
+                  else{
+                    echo("Not Evaluated") ;
+                  }
+                }
+                ?></b></td>
+                
+            </tr>
 
             <tr>
                 <td>Project Supervisor Allocated:</td>
