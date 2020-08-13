@@ -147,7 +147,7 @@
 
   <!--Footer-->
   <div class="jumbotron text-center" style="margin-bottom:0">
-    <p class="footer-data">Footer</p>
+    <h4 class="footer-data">'Education is not the learning of many facts <br> but the training of the mind to think.' - Albert Einstein</h4>
   </div>
   <!--Footer Ends-->
 

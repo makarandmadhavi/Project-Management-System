@@ -9,7 +9,7 @@
 
 <?php include 'sidenav.php';?>
 
-<div id="main">
+<div id="main" style="margin-bottom: 60px;">
   <a href="http://www.dypatil.edu/mumbai/rait"><img src="../assets/images/Rait_logo.png" class="top_logo"></a>
   <!--<img src="files/images/Rait_new_logo_png.png" class="top_logo">-->
   <div class="chip">
@@ -45,6 +45,50 @@
 
 
 </div>
+
+<!--Footer-->
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <!-- <h4 class="footer-data">'Education is not the learning of many facts <br> but the training of the mind to think.' - Albert Einstein</h4> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="single-footer-widget">
+          <h4 class="footer-data">FINAL YEAR PROJECT MANAGEMENT SYSTEM</h4>								
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="single-footer-widget">
+          <h4 class="footer-data">Group Members</h4>
+          <div class="row">
+            <div class="col-6">
+              <ul class="footer-data">
+                <li>Piyush Jha</li>
+                <li>Nikhil Ingale</li>
+                <li>Makarand M.</li>
+                <li>Isha Gujar</li>
+                <li>Mansi Lambat</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul class="footer-data">
+                <li>Prasad Shete</li>
+                <li>Hemant Singh</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>						
+      <div class="col-4 social-widget">
+        <div class="single-footer-widget">
+          <h4 class="footer-data">Under the Guidance of - </h4>
+          <h4 class="footer-data">Mrs. Smita Bharne</h4>
+        </div>
+      </div>							
+    </div>
+  </div>
+</div>
+<!--Footer Ends-->
 
 
 <script src="js/admin.js"></script>
