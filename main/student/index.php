@@ -143,7 +143,7 @@
                 <td>Abstract Submitted:</td>
                 <td><b><?php  if(!$flag)
                 {
-                  echo "No";
+                  echo "No submmitted yet";
                 }
                 else{
                   echo "Yes";
@@ -152,7 +152,7 @@
 
             </tr>
             <tr>
-                <td>Status</td>
+                <td>Abstract Status</td>
                 <td><b><?php  if(!$flag)
                 {
                   echo "No";

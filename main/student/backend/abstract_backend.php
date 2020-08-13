@@ -71,9 +71,10 @@ if (isset($_POST['submit']))
   // the physical file on a temporary uploads directory on the server
   $file3 = $_FILES['researchpaper_2']['tmp_name'];
   $size3 = $_FILES['researchpaper_2']['size'];
-
-  //research paper3
-  $unique4=uniqid();
+//research paper3
+  //echo $_FILES['researchpaper_3']['name']; 
+  if( $_FILES['researchpaper_3']['name']!=""){
+    $unique4=uniqid();
   $filename4 = $_FILES['researchpaper_3']['name'];
   $filename4 = explode(" ",$filename4);
   $filename4 = join("_",$filename4);
@@ -88,14 +89,15 @@ if (isset($_POST['submit']))
   $file4 = $_FILES['researchpaper_3']['tmp_name'];
   $size4 = $_FILES['researchpaper_3']['size'];
   $status = "pending";
-  mkdir("../uploads/".$user);
+  //mkdir("../uploads/".$user);
       // move the uploaded (temporary) file to the specified destination
       if (move_uploaded_file($file1, $destination1) && move_uploaded_file($file2, $destination2) && move_uploaded_file($file3, $destination3))
       {
-          $sql = "INSERT INTO `project`(`groupname`, `project_name`,`domain`, `abstract`, `ppt`, `research_paper_1`, `research_paper_2`, `research_paper_3`,`status`) VALUES ('$user','$title','$domain','$abstract','".$unique1.$filename1."','".$unique2.$filename2."','".$unique3.$filename3."','".$unique4.$filename4."','$status')";
+        $sql = "INSERT INTO `project`(`groupname`, `project_name`,`domain`, `abstract`, `ppt`, `research_paper_1`, `research_paper_2`, `research_paper_3`,`status`) VALUES ('$user','$title','$domain','$abstract','".$unique1.$filename1."','".$unique2.$filename2."','".$unique3.$filename3."','".$unique4.$filename4."','$status')";
+
           if ($conn->query($sql)) 
           {
-           
+              
               header("Location: ../index.php");        
           }
        else
@@ -104,6 +106,28 @@ if (isset($_POST['submit']))
           echo "$conn->error";
         }
       }
+    
+
+  }
+  else{
+    $status = "pending";
+    //mkdir("../uploads/".$user);
+        // move the uploaded (temporary) file to the specified destination
+        if (move_uploaded_file($file1, $destination1) && move_uploaded_file($file2, $destination2) && move_uploaded_file($file3, $destination3))
+        {
+          $sql = "INSERT INTO `project`(`groupname`, `project_name`,`domain`, `abstract`, `ppt`, `research_paper_1`, `research_paper_2`,`status`) VALUES ('$user','$title','$domain','$abstract','".$unique1.$filename1."','".$unique2.$filename2."','".$unique3.$filename3."','$status')";
+            if ($conn->query($sql)) 
+            {
+                
+                header("Location: ../index.php");        
+            }
+         else
+          {?><script></script>
+          <?php
+            echo "$conn->error";
+          }
+        }
+  }
 }
 
 
@@ -165,7 +189,7 @@ if (isset($_POST['update_submit'])) {
   $size3 = $_FILES['researchpaper_2']['size'];
 
   //research paper3
-  echo $_FILES['researchpaper_3']['name']; 
+  //echo $_FILES['researchpaper_3']['name']; 
   if( $_FILES['researchpaper_3']['name']!=""){
     $unique4=uniqid();
   $filename4 = $_FILES['researchpaper_3']['name'];
