@@ -86,7 +86,7 @@
                     <form  action="backend/changepassword_backend.php" class= "changepassowrdform" method="POST">
                       <div class="form-group row">
                         <label for="new_password" class="change_password_text">Password</label>
-                        <input type="password" name="new_password" id="new_password"" Required class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                        <input type="password" name="new_password" id="new_password" Required class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
                         <label for="confirm_password" class="change_password_text">Password</label>
                         <input type="password" name="confirm_password" Required  id="confirm_password" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
                         <small class="text-muted mx-4 mt-2"> At least 8 characters long. - At least 1 uppercase, AND at least 1 lowercase - At least 1 digit AND at least 1 alphanumeric.</small>
@@ -204,9 +204,46 @@
   </div>
   </div>
   <!--Footer-->
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <p class="footer-data">Footer</p>
+  <div class="jumbotron text-center" style="margin-bottom:0; margin-top:100px">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="single-footer-widget">
+          <h4 class="footer-data">FINAL YEAR PROJECT MANAGEMENT SYSTEM</h4>								
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="single-footer-widget">
+          <h4 class="footer-data">Group Members</h4>
+          <div class="row">
+            <div class="col-6">
+              <ul class="footer-data">
+                <li>Piyush Jha</li>
+                <li>Nikhil Ingale</li>
+                <li>Makarand M.</li>
+                <li>Isha Gujar</li>
+                <li>Mansi Lambat</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul class="footer-data">
+                <li>Prasad Shete</li>
+                <li>Hemant Singh</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>						
+      <div class="col-4 social-widget">
+        <div class="single-footer-widget">
+          <h4 class="footer-data">Under the Guidance of - </h4>
+          <h4 class="footer-data">Mrs. Smita Bharne</h4>
+        </div>
+      </div>							
+    </div>
   </div>
+</div>
+</div>
   <!--Footer Ends-->
 
   <script src="js/studentdashboard.js"></script>

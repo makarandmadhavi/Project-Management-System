@@ -89,11 +89,7 @@
     <br>
     <br>
   </div>
-  <!--Footer-->
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <p class="footer-data">Footer</p>
-  </div>
-  <!--Footer Ends-->
+
 </div>
 
 
