@@ -40,9 +40,9 @@ if(isset($_SESSION['logintype'])){
         <div class="row">
             <div class="col-sm-6">
                 <div class="logodiv">
-                    <img id="logo" src="assets/images/rait.png" alt="logo">
+                    <img id="logo" src="assets/images/Rait_new_logo_png.png" alt="logo">
                 </div>
-                <h1 class="display-4">Project Management</h1>
+                <h1 class="display-4">Final Year Project Management System</h1>
 
                 <hr class="my-4">
 

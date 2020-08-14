@@ -18,7 +18,7 @@ window.onload = function() {
 </script>
 
 <div id="main">
-  <a href="http://www.dypatil.edu/mumbai/rait"><img src="../assets/images/Rait_logo.png" class="top_logo"></a>
+  <a href="http://www.dypatil.edu/mumbai/rait"><img src="../assets/images/Rait_new_logo_png.png" class="top_logo"></a>
   <!--<img src="files/images/Rait_new_logo_png.png" class="top_logo">-->
   <div class="chip">
     <img src="../assets/images/img_avatar.png" alt="Person" width="96" height="96">
