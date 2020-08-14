@@ -81,7 +81,7 @@
 
 
    //send email to group members
-     /* include "../../classes/class.phpmailer.php"; // include the class name
+      include "../../classes/class.phpmailer.php"; // include the class name
      $mail = new PHPMailer(); // create a new object
      $mail->IsSMTP();         // enable SMTP
      $mail->SMTPDebug = 1;    // debugging: 1 = errors and messages, 2 = messages only
@@ -90,9 +90,9 @@
      $mail->Host = "smtp.gmail.com";
      $mail->Port = 465; // or 587  465
      $mail->IsHTML(true);
-     $mail->Username = ""; //"teamtcrait@gmail.com";       //"tcteamrait@gmail.com";   // "halltktteam@gmail.com";
-     $mail->Password = ""; //"teamtc@rait";                 //"raittcteam";             // "raithalltkt";
-     $mail->SetFrom("piyushjha65@gmail.com");  //("teamtcrait@gmail.com");         //("tcteamrait@gmail.com");     // ("halltktteam@gmail.com");
+     $mail->Username = "yourEmailid"; 
+     $mail->Password = "yourpassword"; 
+     $mail->SetFrom("yourEmailid"); 
      $mail->Subject = "Final Year Project Group Registration";
      $mail->SMTPOptions = array(
          'ssl' => array(
@@ -123,5 +123,5 @@
              alert(nl2br("Registered Successfully !"));
          </script>
          <?php
-     } */ 
+     }  
 ?>
