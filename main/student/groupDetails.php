@@ -104,7 +104,7 @@
                 </div>
                 <div class="form-row" id="member_name">
                     <label>Member-3 : &nbsp; </label>
-                    <label id="member3"><?php echo $mem1_name ?></label>
+                    <label id="member3"><?php echo $mem3_name ?></label>
                     <input type="hidden" id="mem3" name="member3" value="<?php echo $mem3_name ?>">
                 </div>
             </div>
